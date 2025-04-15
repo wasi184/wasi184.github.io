@@ -7,6 +7,70 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/a2e8e6f65e.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+    header {
+      background-color: #fff;
+      padding: 20px 0;
+      border-bottom: 1px solid #ccc;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+      display: flex;
+      align-items: center;
+    }
+    header h1 span {
+      display: block;
+      font-size: 0.6em;
+      color: #666;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      margin-right: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+    }
+    section h2 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+    .project-grid {
+      display: grid;
+      gap: 20px;
+    }
+    .project-card {
+      background: #fff;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 30px;
+      background-color: #f0f0f0;
+    }
+    #about p {
+      font-size: 1em;
+      line-height: 1.6;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -16,13 +80,13 @@
         <a href="https://github.com/wasi184" target="_blank" title="My GitHub">
           <i class="fab fa-github" style="font-size: 1.2em; margin-left: 8px;"></i>
         </a>
+        <br />
+        <span>Undergrad CSE student</span>
       </h1>
-      <p class="typing"></p>
       <nav>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
-        <!--<button id="dark-mode-toggle">🌙</button>-->
       </nav>
     </div>
   </header>
@@ -30,7 +94,9 @@
   <section id="about">
     <div class="container">
       <h2>About Me</h2>
-     <h3> <p>Hi, I'm Wasi — a dedicated learner on a journey to become a skilled software engineer. I'm currently exploring programming with Java, Python, and SQL, while also building a strong foundation in Object-Oriented Programming and Machine Learning. Alongside technical skills, I’m developing my copywriting abilities to better communicate ideas clearly and effectively. My long-term goal is to specialize in Large Language Models and Artificial Intelligence, where I can combine logic, creativity, and real-world impact..</h3></p>
+      <p style="font-size: 0.95em;">
+        Hi, I'm Wasi — a dedicated learner on a journey to become a skilled software engineer. I'm currently exploring programming with Java, Python, and SQL, while also building a strong foundation in Object-Oriented Programming and Machine Learning. Alongside technical skills, I’m developing my copywriting abilities to better communicate ideas clearly and effectively. My long-term goal is to specialize in Large Language Models and Artificial Intelligence, where I can combine logic, creativity, and real-world impact.
+      </p>
     </div>
   </section>
 
@@ -72,7 +138,5 @@
       <p>© 2025 VortexRage. All rights reserved.</p>
     </div>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
