@@ -13,7 +13,7 @@
       color: #333;
     }
     .container {
-      max-width: 1000px;
+      max-width: 800px;
       margin: auto;
     }
     h1 {
@@ -22,22 +22,17 @@
       font-size: 2.8em;
       color: #0077cc;
     }
-    .resource-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 35px; /* More space between cards */
-      margin-bottom: 50px;
-    }
     .resource-card {
       background: #ffffff;
-      border-radius: 20px; /* More curved */
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* Stronger shadow */
+      border-radius: 20px; /* more curved */
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* more shade */
       padding: 25px;
+      margin-bottom: 40px; /* space between cards */
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .resource-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.25); /* Even bigger on hover */
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25); /* bigger shadow on hover */
     }
     .resource-card h2 {
       margin-top: 0;
@@ -67,25 +62,24 @@
   <div class="container">
     <h1>Educational Resources</h1>
 
-    <div class="resource-grid">
-      <div class="resource-card">
-        <h2>BRAC Admission Guidebook</h2>
-        <p>A complete guide for BRAC University admission preparation.</p>
-        <a href="files/guidebook.pdf" target="_blank">Download PDF</a>
-      </div>
-
-      <div class="resource-card">
-        <h2>How to Write an Essay</h2>
-        <p>Tips and tricks to write impressive essays for admission tests.</p>
-        <a href="files/essay_tips.pdf" target="_blank">Download PDF</a>
-      </div>
-
-      <div class="resource-card">
-        <h2>Model Test</h2>
-        <p>Practice model tests to strengthen your preparation.</p>
-        <a href="files/model_test.pdf" target="_blank">Download PDF</a>
-      </div>
+    <div class="resource-card">
+      <h2>BRAC Admission Guidebook</h2>
+      <p>A complete guide for BRAC University admission preparation.</p>
+      <a href="files/guidebook.pdf" target="_blank">Download PDF</a>
     </div>
+
+    <div class="resource-card">
+      <h2>How to Write an Essay</h2>
+      <p>Tips and tricks to write impressive essays for admission tests.</p>
+      <a href="files/essay_tips.pdf" target="_blank">Download PDF</a>
+    </div>
+
+    <div class="resource-card">
+      <h2>Model Test</h2>
+      <p>Practice model tests to strengthen your preparation.</p>
+      <a href="files/model_test.pdf" target="_blank">Download PDF</a>
+    </div>
+
   </div>
 </body>
 </html>
