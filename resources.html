@@ -14,16 +14,19 @@
       background-size: cover;
       background-attachment: fixed;
     }
+
     .container {
       max-width: 800px;
       margin: auto;
     }
+
     h1 {
       text-align: center;
       margin-bottom: 50px;
       font-size: 2.8em;
       color: #0077cc;
     }
+
     .resource-card {
       background: #ffffffdd;
       border-radius: 20px;
@@ -32,32 +35,38 @@
       margin-bottom: 40px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .resource-card:hover {
       transform: translateY(-8px);
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
     }
+
     .resource-card h2 {
       margin-top: 0;
       color: #005f99;
     }
+
     .resource-card p {
       margin: 10px 0 20px;
       font-size: 1em;
       line-height: 1.6;
     }
+
     .resource-card a {
       display: inline-block;
-      padding: 16px 28px; /* Made button bigger */
+      padding: 18px 34px; /* Bigger padding */
       background: #00aaff;
       color: white;
       text-decoration: none;
-      border-radius: 10px;
+      border-radius: 12px; /* More rounded */
       font-weight: bold;
-      font-size: 1.1em; /* Slightly bigger text */
-      transition: background 0.3s;
+      font-size: 1.2em; /* Bigger font */
+      transition: background 0.3s, transform 0.3s;
     }
+
     .resource-card a:hover {
       background: #0088cc;
+      transform: scale(1.05); /* Slight growth on hover */
     }
   </style>
 </head>
