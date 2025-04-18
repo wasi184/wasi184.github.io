@@ -1,157 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wasi || Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/a2e8e6f65e.js" crossorigin="anonymous"></script>
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #333;
-    }
-    .container {
-      width: 90%;
-      max-width: 1000px;
-      margin: auto;
-      padding: 20px;
-    }
-    header {
-      background-color: #fff;
-      padding: 20px 0;
-      border-bottom: 1px solid #ccc;
-    }
-    nav a {
-      margin-right: 20px;
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
-    }
-    section h2 {
-      font-size: 1.8em;
-      margin-bottom: 10px;
-    }
-    .project-grid {
-      display: grid;
-      gap: 20px;
-    }
-    .project-card {
-      background: #fff;
-      padding: 15px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px 0;
-      margin-top: 30px;
-      background-color: #f0f0f0;
-    }
-    #about p {
-      font-size: 1em;
-      line-height: 1.6;
-    }
+<style>
+  /* Other styles... */
 
-    /* Added button style for View Resources */
-    .button {
-      display: inline-block;
-      padding: 12px 30px;
-      font-size: 16px;
-      text-align: center;
-      text-decoration: none;
-      color: white;
-      background-color: #add8e6; /* Light Blue */
-      border: none;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 3D effect */
-      transition: all 0.3s ease;
-      margin-top: 20px;
-    }
-    .button:hover {
-      background-color: #87ceeb;
-      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
-      transform: translateY(-4px);
-    }
-    .button:active {
-      background-color: #4682b4;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      transform: translateY(2px);
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-      <div style="text-align: left;">
-        <h1 style="margin: 0; font-size: 2.5em; color: #000;">Wasi</h1>
-        <h2 style="margin: 5px 0; font-size: 1.1em; color: #666;">Undergrad CSE student</h2>
-      </div>
-      <nav style="width: 100%; margin-top: 15px;">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <section id="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p style="font-size: 0.95em;">
-        Hi, I'm Wasi — a dedicated learner on a journey to become a skilled software engineer. I'm currently exploring programming with Java, Python, and SQL, while also building a strong foundation in Object-Oriented Programming and Machine Learning. Alongside technical skills, I’m developing my copywriting abilities to better communicate ideas clearly and effectively. My long-term goal is to specialize in Large Language Models and Artificial Intelligence, where I can combine logic, creativity, and real-world impact.
-      </p>
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="project-grid">
-        <div class="project-card">
-          <h3>Project 1</h3>
-          <p><strong>Clean personal portfolio using only HTML, CSS, and JS.</strong></p>
-        </div>
-        <div class="project-card">
-          <h3>Project 2</h3>
-          <p><strong>Modern responsive design with animated dark mode toggle feature.</strong></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- New Section: Educational Resources -->
-  <section id="resources-link">
-    <div class="container" style="text-align: center;">
-      <h2>Educational Resources</h2>
-      <p>Explore helpful PDFs for BRAC University admission preparation.</p>
-      <a href="resources.html" class="button">View Resources</a>
-    </div>
-  </section>
-  <!-- End New Section -->
-
-  <section id="contact">
-    <div class="container">
-      <h2>Contact Me</h2>
-      <p><strong>Name:</strong> Wasi</p>
-      <p><strong>Email:</strong> vortexrage05@gmail.com</p>
-      <p>
-        <strong>GitHub:</strong>
-        <a href="https://github.com/wasi184" target="_blank">
-          github.com/wasi184
-        </a>
-      </p>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>© 2025 VortexRage. All rights reserved.</p>
-    </div>
-  </footer>
-</body>
-</html>
+  .button {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: #3399ff; /* A nicer light blue */
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    margin-top: 20px;
+  }
+  .button:hover {
+    background-color: #1e90ff; /* Slightly darker on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-4px);
+  }
+  .button:active {
+    background-color: #0077cc; /* Even deeper blue on click */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: translateY(2px);
+  }
+</style>
