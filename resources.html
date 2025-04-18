@@ -7,15 +7,24 @@
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background: #f9f9f9 url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTl7K3zWzAJR9Iqhb--e4RSQn3dctUPEf_CgHy4sqQHUhMOmBbIBu3rImD&s=10') no-repeat center center fixed;
-      background-size: 300px;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-attachment: fixed;
-      background-blend-mode: lighten;
       margin: 0;
       padding: 20px;
       color: #333;
+      background: #f9f9f9;
+      position: relative;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTl7K3zWzAJR9Iqhb--e4RSQn3dctUPEf_CgHy4sqQHUhMOmBbIBu3rImD&s=10') no-repeat center center;
+      background-size: 300px;
+      opacity: 0.08; /* Very light watermark */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
     }
     .container {
       max-width: 800px;
@@ -29,15 +38,15 @@
     }
     .resource-card {
       background: #ffffff;
-      border-radius: 20px; /* more curved */
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* more shade */
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
       padding: 25px;
-      margin-bottom: 40px; /* space between cards */
+      margin-bottom: 40px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .resource-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25); /* bigger shadow on hover */
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
     }
     .resource-card h2 {
       margin-top: 0;
