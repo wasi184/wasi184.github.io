@@ -18,25 +18,26 @@
     }
     h1 {
       text-align: center;
-      margin-bottom: 40px;
-      font-size: 2.5em;
+      margin-bottom: 50px;
+      font-size: 2.8em;
       color: #0077cc;
     }
     .resource-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 35px; /* More space between cards */
+      margin-bottom: 50px;
     }
     .resource-card {
       background: #ffffff;
-      border-radius: 15px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* 3D shadow */
-      padding: 20px;
+      border-radius: 20px; /* More curved */
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* Stronger shadow */
+      padding: 25px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .resource-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.25); /* Even bigger on hover */
     }
     .resource-card h2 {
       margin-top: 0;
@@ -44,16 +45,16 @@
     }
     .resource-card p {
       margin: 10px 0 20px;
-      font-size: 0.95em;
+      font-size: 1em;
       line-height: 1.6;
     }
     .resource-card a {
       display: inline-block;
-      padding: 10px 20px;
+      padding: 12px 24px;
       background: #00aaff;
       color: white;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 10px;
       font-weight: bold;
       transition: background 0.3s;
     }
