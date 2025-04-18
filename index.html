@@ -56,23 +56,41 @@
       font-size: 1em;
       line-height: 1.6;
     }
+
+    /* Added button style for View Resources */
+    .button {
+      display: inline-block;
+      padding: 12px 30px;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      background-color: #add8e6; /* Light Blue */
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 3D effect */
+      transition: all 0.3s ease;
+      margin-top: 20px;
+    }
+    .button:hover {
+      background-color: #87ceeb;
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+      transform: translateY(-4px);
+    }
+    .button:active {
+      background-color: #4682b4;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transform: translateY(2px);
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
       <div style="text-align: left;">
-  <h1 style="margin: 0; font-size: 2.5em; color: #000;">Wasi</h1>
-
+        <h1 style="margin: 0; font-size: 2.5em; color: #000;">Wasi</h1>
         <h2 style="margin: 5px 0; font-size: 1.1em; color: #666;">Undergrad CSE student</h2>
       </div>
-     <!-- <div style="text-align: right;">
-        <a class="github-link" href="https://github.com/wasi184" target="_blank" style="display: inline-flex; align-items: center; color: #000; text-decoration: none; font-weight: 500;">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFbanKXJPQrkuUov41UF4cj-8DSTZ-BQBq_6SVYkJk1cnHWn50MY1LREzE&s=10"
-               alt="GitHub Logo" style="width: 20px; margin-right: 8px;">
-          github.com/wasi184
-        </a>
-      </div>-->
       <nav style="width: 100%; margin-top: 15px;">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
@@ -106,6 +124,16 @@
     </div>
   </section>
 
+  <!-- New Section: Educational Resources -->
+  <section id="resources-link">
+    <div class="container" style="text-align: center;">
+      <h2>Educational Resources</h2>
+      <p>Explore helpful PDFs for BRAC University admission preparation.</p>
+      <a href="resources.html" class="button">View Resources</a>
+    </div>
+  </section>
+  <!-- End New Section -->
+
   <section id="contact">
     <div class="container">
       <h2>Contact Me</h2>
@@ -114,9 +142,6 @@
       <p>
         <strong>GitHub:</strong>
         <a href="https://github.com/wasi184" target="_blank">
-         <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFbanKXJPQrkuUov41UF4cj-8DSTZ-BQBq_6SVYkJk1cnHWn50MY1LREzE&s=10"
-               alt="GitHub Logo"
-               style="width: 20px; vertical-align: middle; margin-right: 5px;" />-->
           github.com/wasi184
         </a>
       </p>
