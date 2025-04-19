@@ -18,7 +18,7 @@ body {
   width: 90%;
   max-width: 1100px;
   margin: auto;
-  padding: 2rem 0;
+  padding: 2rem 1rem; /* updated for mobile layout */
 }
 
 header {
@@ -28,7 +28,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  width: 100%; /* Added for full width */
+  width: 100%;
 }
 
 header .container {
@@ -36,11 +36,17 @@ header .container {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  width: 100%; /* Added for better mobile responsiveness */
+  width: 100%;
 }
 
 header h1 {
   font-size: 2rem;
+  word-break: break-word; /* updated for mobile layout */
+}
+
+header p {
+  text-align: center;
+  margin-top: 0.5rem;
 }
 
 nav {
@@ -72,16 +78,41 @@ nav a:hover::after {
 }
 
 #dark-mode-toggle {
-  background: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 45px;
+  height: 45px;
+  background: #444;
   border: none;
+  border-radius: 50%;
   font-size: 1.2rem;
   cursor: pointer;
   color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000; /* stay above everything */
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#dark-mode-toggle:hover {
+  background: #666;
+  transform: scale(1.1);
 }
 
 /* Remove white dot/focus highlight on tap */
 #dark-mode-toggle:focus {
   outline: none;
+}
+
+body.dark-mode #dark-mode-toggle {
+  background: #eee;
+  color: #121212;
+}
+
+body.dark-mode #dark-mode-toggle:hover {
+  background: #ddd;
 }
 
 section {
@@ -224,10 +255,40 @@ body.dark-mode .button:hover {
   background-color: #007acc;
 }
 
+/* Main navigation for mobile */
+.main-nav {
+  text-align: center;
+  margin-top: 1rem;
+  padding: 1rem 0;
+  background: #222;
+}
+
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 15px;
+  font-size: 1.1rem;
+  display: inline-block;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
 /* Responsive adjustments */
 @media (max-width: 600px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+  .main-nav a {
+    margin: 8px;
+    font-size: 1rem;
+  }
   #dark-mode-toggle {
     font-size: 1rem;
     margin-top: 10px;
   }
 }
+
+ 
