@@ -30,7 +30,6 @@ header {
   z-index: 1000;
   display: flex;
   justify-content: center; /* Center the header content */
-  width: 100%; /* Narrower header */
 }
 
 header .container {
