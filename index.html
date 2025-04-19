@@ -79,12 +79,34 @@
       width: 100%;
     }
 
+    /* Dark Mode Toggle Button */
     #dark-mode-toggle {
-      background: none;
-      border: none;
-      font-size: 1.2rem;
-      cursor: pointer;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background: #444;
       color: #fff;
+      font-size: 1.5rem;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    #dark-mode-toggle:hover {
+      background: #666;
+      transform: scale(1.1);
+    }
+
+    #dark-mode-toggle:focus {
+      outline: none;
+      box-shadow: none;
     }
 
     section {
@@ -204,7 +226,7 @@
     .button {
       display: inline-block;
       padding: 10px 20px;
-      background-color: #007bff; /* Bright blue */
+      background-color: #007bff;
       color: white;
       text-decoration: none;
       font-weight: 600;
@@ -213,7 +235,7 @@
     }
 
     .button:hover {
-      background-color: #0056b3; /* Darker blue on hover */
+      background-color: #0056b3;
       transform: scale(1.05);
     }
 
@@ -228,90 +250,96 @@
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-      <div style="text-align: left;">
-        <h1 style="margin: 0; font-size: 2.5em;">Wasi</h1>
-        <h2 style="margin: 5px 0; font-size: 1.1em; color: #666;">Undergrad CSE student</h2>
+
+<!-- Dark Mode Toggle Button -->
+<button id="dark-mode-toggle">☀️</button>
+
+<header>
+  <div class="container">
+    <div style="text-align: left;">
+      <h1 style="margin: 0; font-size: 2.5em;">Wasi</h1>
+      <h2 style="margin: 5px 0; font-size: 1.1em; color: #666;">Undergrad CSE student</h2>
+    </div>
+    <button class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </button>
+    <nav class="nav-links" id="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#resources-link">Resources</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <h2>About Me</h2>
+    <p>Hi, I'm Wasi — a dedicated learner on a journey to become a skilled software engineer. I'm currently exploring programming with Java, Python, and SQL, while also building a strong foundation in Object-Oriented Programming and Machine Learning. Alongside technical skills, I’m developing my copywriting abilities to better communicate ideas clearly and effectively. My long-term goal is to specialize in Large Language Models and Artificial Intelligence, where I can combine logic, creativity, and real-world impact.</p>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Project 1</h3>
+        <p><strong>Clean personal portfolio using only HTML, CSS, and JS.</strong></p>
       </div>
-      <button class="menu-toggle" id="menu-toggle">
-        <i class="fas fa-bars"></i>
-      </button>
-      <nav class="nav-links" id="nav-links">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#resources-link">Resources</a>
-        <a href="#contact">Contact</a>
-        <a href="javascript:void(0)" id="dark-mode-toggle" style="margin-left: 10px;">Dark Mode</a>
-      </nav>
-    </div>
-  </header>
-
-  <section id="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>
-        Hi, I'm Wasi — a dedicated learner on a journey to become a skilled software engineer. I'm currently exploring programming with Java, Python, and SQL, while also building a strong foundation in Object-Oriented Programming and Machine Learning. Alongside technical skills, I’m developing my copywriting abilities to better communicate ideas clearly and effectively. My long-term goal is to specialize in Large Language Models and Artificial Intelligence, where I can combine logic, creativity, and real-world impact.
-      </p>
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="project-grid">
-        <div class="project-card">
-          <h3>Project 1</h3>
-          <p><strong>Clean personal portfolio using only HTML, CSS, and JS.</strong></p>
-        </div>
-        <div class="project-card">
-          <h3>Project 2</h3>
-          <p><strong>Modern responsive design with animated dark mode toggle feature.</strong></p>
-        </div>
+      <div class="project-card">
+        <h3>Project 2</h3>
+        <p><strong>Modern responsive design with animated dark mode toggle feature.</strong></p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="resources-link">
-    <div class="container" style="text-align: center;">
-      <h2>Educational Resources</h2>
-      <p>Explore helpful PDFs for BRAC University admission preparation.</p>
-      <a href="resources.html" class="button">View Resources</a>
-    </div>
-  </section>
+<section id="resources-link">
+  <div class="container" style="text-align: center;">
+    <h2>Educational Resources</h2>
+    <p>Explore helpful PDFs for BRAC University admission preparation.</p>
+    <a href="resources.html" class="button">View Resources</a>
+  </div>
+</section>
 
-  <section id="contact">
-    <div class="container">
-      <h2>Contact Me</h2>
-      <p><strong>Name:</strong> Wasi</p>
-      <p><strong>Email:</strong> vortexrage05@gmail.com</p>
-      <p>
-        <strong>GitHub:</strong>
-        <a href="https://github.com/wasi184" target="_blank">github.com/wasi184</a>
-      </p>
-    </div>
-  </section>
+<section id="contact">
+  <div class="container">
+    <h2>Contact Me</h2>
+    <p><strong>Name:</strong> Wasi</p>
+    <p><strong>Email:</strong> vortexrage05@gmail.com</p>
+    <p><strong>GitHub:</strong> <a href="https://github.com/wasi184" target="_blank">github.com/wasi184</a></p>
+  </div>
+</section>
 
-  <footer>
-    <div class="container">
-      <p>© 2025 VortexRage. All rights reserved.</p>
-    </div>
-  </footer>
+<footer>
+  <div class="container">
+    <p>© 2025 VortexRage. All rights reserved.</p>
+  </div>
+</footer>
 
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const navLinks = document.getElementById('nav-links');
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
-    const body = document.body;
+<!-- JavaScript -->
+<script>
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.getElementById('nav-links');
+const darkModeToggle = document.getElementById('dark-mode-toggle');
+const body = document.body;
 
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
 
-    darkModeToggle.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-    });
-  </script>
+darkModeToggle.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+  if (body.classList.contains('dark-mode')) {
+    darkModeToggle.textContent = '🌙';
+  } else {
+    darkModeToggle.textContent = '☀️';
+  }
+});
+</script>
+
 </body>
 </html>
