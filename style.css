@@ -1,191 +1,218 @@
 /* Reset & base styles */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f5f5f5;
-  color: #222;
-  transition: background-color 0.3s, color 0.3s;
-  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+  color: #222;
+  transition: background-color 0.3s, color 0.3s;
+  line-height: 1.6;
 }
 
 .container {
-  width: 90%;
-  max-width: 1100px;
-  margin: auto;
-  padding: 2rem 0;
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem 0;
 }
 
 header {
-  background: #222;
-  color: #fff;
-  padding: 1.5rem 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  background: #222;
+  color: #fff;
+  padding: 1.5rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 header h1 {
-  font-size: 2rem;
+  font-size: 2rem;
 }
 
 nav {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
 
 nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
 }
 
 nav a::after {
-  content: "";
-  position: absolute;
-  height: 2px;
-  width: 0;
-  background: #fff;
-  left: 0;
-  bottom: -4px;
-  transition: 0.3s;
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0;
+  background: #fff;
+  left: 0;
+  bottom: -4px;
+  transition: 0.3s;
 }
 
 nav a:hover::after {
-  width: 100%;
+  width: 100%;
 }
 
 #dark-mode-toggle {
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-  color: #fff;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #fff;
 }
 
 section {
-  padding: 3rem 0;
+  padding: 3rem 0;
 }
 
 h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
 }
 
 .project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 
 .project-card {
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 500px;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: auto;
 }
 
 input, textarea {
-  padding: 0.8rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-  outline: none;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
 }
 
 button[type="submit"] {
-  padding: 0.8rem;
-  border: none;
-  border-radius: 8px;
-  background-color: #222;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #222;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 button[type="submit"]:hover {
-  background-color: #444;
+  background-color: #444;
 }
 
 .social-links {
-  text-align: center;
-  margin-top: 2rem;
+  text-align: center;
+  margin-top: 2rem;
 }
 
 .social-links a {
-  margin: 0 10px;
-  font-size: 1.5rem;
-  color: #222;
-  transition: color 0.3s;
+  margin: 0 10px;
+  font-size: 1.5rem;
+  color: #222;
+  transition: color 0.3s;
 }
 
 .social-links a:hover {
-  color: #0077b5;
+  color: #0077b5;
 }
 
 footer {
-  background: #222;
-  color: #fff;
-  text-align: center;
-  padding: 1.5rem 0;
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 0;
 }
 
 /* Dark mode */
 body.dark-mode {
-  background-color: #121212;
-  color: #eee;
+  background-color: #121212;
+  color: #eee;
 }
 
 body.dark-mode .project-card {
-  background: #1e1e1e;
-  color: #eee;
+  background: #1e1e1e;
+  color: #eee;
 }
 
 body.dark-mode input,
 body.dark-mode textarea {
-  background-color: #2b2b2b;
-  color: #eee;
-  border: 1px solid #444;
+  background-color: #2b2b2b;
+  color: #eee;
+  border: 1px solid #444;
 }
 
 body.dark-mode button[type="submit"] {
-  background-color: #eee;
-  color: #121212;
+  background-color: #eee;
+  color: #121212;
 }
 
 body.dark-mode .social-links a {
-  color: #eee;
+  color: #eee;
 }
 
 body.dark-mode header {
-  background: #1a1a1a;
+  background: #1a1a1a;
+}
+
+/* Blue "View Resources" Button */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff; /* Bright blue */
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.05);
+}
+
+/* Dark mode - button styling */
+body.dark-mode .button {
+  background-color: #3399ff;
+  color: #fff;
+}
+
+body.dark-mode .button:hover {
+  background-color: #007acc;
 }
