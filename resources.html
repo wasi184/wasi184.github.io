@@ -223,20 +223,22 @@
   <button onclick="scrollToTop()" id="topBtn" title="Go to top">Top</button>
 
   <script>
-    window.onscroll = function() {scrollFunction()};
+// Dark mode toggle
+const darkModeToggle = document.getElementById('dark-mode-toggle');
 
-    function scrollFunction() {
-      const btn = document.getElementById("topBtn");
-      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        btn.style.display = "block";
-      } else {
-        btn.style.display = "none";
-      }
-    }
+darkModeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+});
 
-    function scrollToTop() {
-      window.scrollTo({top: 0, behavior: 'smooth'});
-    }
-  </script>
+// Animate project cards on page load
+window.addEventListener('DOMContentLoaded', () => {
+  const projectCards = document.querySelectorAll('.project-card');
+  projectCards.forEach((card, index) => {
+    setTimeout(() => {
+      card.classList.add('animate-card');
+    }, index * 200); // delay between cards (200ms for smoother cascade)
+  });
+});
+</script>
 </body>
 </html>
