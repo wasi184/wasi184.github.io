@@ -21,7 +21,6 @@ body {
   padding: 2rem 1rem; /* updated for mobile layout */
 }
 
-/* Reduced width of the header */
 header {
   background: #222;
   color: #fff;
@@ -31,7 +30,7 @@ header {
   z-index: 1000;
   display: flex;
   justify-content: center; /* Center the header content */
-  width: 80%; /* Reduce width of the top bar */
+  width: 80%; /* Narrower header */
 }
 
 header .container {
@@ -39,8 +38,10 @@ header .container {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  width: 100%;
+  width: 80%; /* Match the header width */
+  max-width: 1100px; /* You can keep the max-width if needed */
 }
+
 
 header h1 {
   font-size: 2rem;
@@ -80,7 +81,7 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* Dark mode toggle button */
+/* Dark mode toggle button (NEW cleaned version) */
 #dark-mode-toggle {
   width: 40px;
   height: 40px;
@@ -276,3 +277,6 @@ body.dark-mode .button:hover {
     right: 20px;
   }
 }
+
+
+
