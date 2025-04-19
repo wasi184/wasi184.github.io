@@ -41,7 +41,6 @@ header .container {
   max-width: 1100px;
 }
 
-
 header h1 {
   font-size: 2rem;
   word-break: break-word; /* updated for mobile layout */
@@ -80,43 +79,24 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* Dark mode toggle button */
+/* Dark mode toggle button (NEW cleaned version) */
 #dark-mode-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px; /* shifted to top right */
-  width: 45px;
-  height: 45px;
-  background: #444;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
   border: none;
   border-radius: 50%;
-  font-size: 1.5rem; /* sun emoji sized nicely */
   cursor: pointer;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2000; /* stay above everything */
   transition: background-color 0.3s, transform 0.3s;
+  margin-left: 15px;
 }
 
 #dark-mode-toggle:hover {
-  background: #666;
   transform: scale(1.1);
 }
 
-#dark-mode-toggle:focus {
-  outline: none;
-  box-shadow: none; /* fully remove any focus dot */
-}
-
 body.dark-mode #dark-mode-toggle {
-  background: #eee;
-  color: #121212;
-}
-
-body.dark-mode #dark-mode-toggle:hover {
-  background: #ddd;
+  background-color: #555;
 }
 
 section {
@@ -183,7 +163,7 @@ button[type="submit"]:hover {
   margin-top: 2rem;
 }
 
-.social-links a {
+social-links a {
   margin: 0 10px;
   font-size: 1.5rem;
   color: #222;
@@ -295,3 +275,4 @@ body.dark-mode .button:hover {
     right: 20px;
   }
 }
+
