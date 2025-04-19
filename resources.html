@@ -58,7 +58,7 @@
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
       padding: 25px;
       margin-bottom: 40px;
-      opacity: 0;
+      opacity: 0; 
       transform: translateY(30px);
       animation: fadeInUp 0.6s forwards;
     }
@@ -236,9 +236,30 @@ window.addEventListener('DOMContentLoaded', () => {
   projectCards.forEach((card, index) => {
     setTimeout(() => {
       card.classList.add('animate-card');
-    }, index * 200); // delay between cards (200ms for smoother cascade)
+    }, index * 200);
+  });
+});
+
+// Scroll to Top Button
+const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 300) {
+    scrollToTopBtn.style.display = 'block';
+  } else {
+    scrollToTopBtn.style.display = 'none';
+  }
+});
+
+scrollToTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
   });
 });
 </script>
+
+<button id="scrollToTopBtn">&#8679;</button> <!-- Up arrow -->
+
 </body>
 </html>
