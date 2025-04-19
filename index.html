@@ -8,36 +8,88 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/a2e8e6f65e.js" crossorigin="anonymous"></script>
   <style>
-    /* Your existing CSS */
-    /* (No mobile menu CSS here, as you asked) */
+    /* Inline small fixes to existing CSS */
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #fff;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 10px;
+        border-top: 1px solid #ccc;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+    body.dark-mode {
+      background: #111;
+      color: #eee;
+    }
+    body.dark-mode header,
+    body.dark-mode footer,
+    body.dark-mode .project-card,
+    body.dark-mode nav,
+    body.dark-mode .container {
+      background: #1c1c1c;
+      color: #eee;
+    }
+    body.dark-mode nav a {
+      color: #eee;
+    }
+    body.dark-mode h1 {
+      color: #eee;
+    }
+    body.dark-mode .button {
+      background-color: #444;
+      color: white;
+    }
+    body.dark-mode .button:hover {
+      background-color: #666;
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
       <div style="text-align: left;">
-        <h1 style="margin: 0; font-size: 2.5em; color: #000;">Wasi</h1>
+        <h1 style="margin: 0; font-size: 2.5em;">Wasi</h1>
         <h2 style="margin: 5px 0; font-size: 1.1em; color: #666;">Undergrad CSE student</h2>
       </div>
-
-      <!-- Hamburger Button -->
-      <div class="menu-toggle" id="menu-toggle">
+      <button class="menu-toggle" id="menu-toggle">
         <i class="fas fa-bars"></i>
-      </div>
-
-      <nav id="nav-links" style="width: 100%; margin-top: 15px;">
+      </button>
+      <nav class="nav-links" id="nav-links">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
+        <a href="#resources-link">Resources</a>
         <a href="#contact">Contact</a>
+        <a href="javascript:void(0)" id="dark-mode-toggle" style="margin-left: auto;">Dark Mode</a>
       </nav>
-
     </div>
   </header>
 
   <section id="about">
     <div class="container">
       <h2>About Me</h2>
-      <p style="font-size: 0.95em;">
+      <p>
         Hi, I'm Wasi — a dedicated learner on a journey to become a skilled software engineer. I'm currently exploring programming with Java, Python, and SQL, while also building a strong foundation in Object-Oriented Programming and Machine Learning. Alongside technical skills, I’m developing my copywriting abilities to better communicate ideas clearly and effectively. My long-term goal is to specialize in Large Language Models and Artificial Intelligence, where I can combine logic, creativity, and real-world impact.
       </p>
     </div>
@@ -59,7 +111,6 @@
     </div>
   </section>
 
-  <!-- New Section: Educational Resources -->
   <section id="resources-link">
     <div class="container" style="text-align: center;">
       <h2>Educational Resources</h2>
@@ -67,7 +118,6 @@
       <a href="resources.html" class="button">View Resources</a>
     </div>
   </section>
-  <!-- End New Section -->
 
   <section id="contact">
     <div class="container">
@@ -76,9 +126,7 @@
       <p><strong>Email:</strong> vortexrage05@gmail.com</p>
       <p>
         <strong>GitHub:</strong>
-        <a href="https://github.com/wasi184" target="_blank">
-          github.com/wasi184
-        </a>
+        <a href="https://github.com/wasi184" target="_blank">github.com/wasi184</a>
       </p>
     </div>
   </section>
@@ -89,15 +137,20 @@
     </div>
   </footer>
 
-  <!-- JavaScript for Hamburger Menu -->
   <script>
     const menuToggle = document.getElementById('menu-toggle');
     const navLinks = document.getElementById('nav-links');
 
     menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('hidden');
+      navLinks.classList.toggle('active');
+    });
+
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+
+    darkModeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
     });
   </script>
-
 </body>
 </html>
