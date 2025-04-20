@@ -5,7 +5,7 @@
   --text-color: #f0f0f0; /* Light text */
   --button-bg: #ff9800;
   --button-text: #fff;
-  --section-bg1: linear-gradient(135deg, #ff6f61, #ff9f43); /* Gradient background for 'About' */
+  --section-bg1: linear-gradient(135deg, #ff9800, #ff9f43); /* Gradient background for 'About' */
   --section-bg2: linear-gradient(135deg, #4caf50, #8bc34a); /* Gradient background for 'Projects' */
   --section-bg3: linear-gradient(135deg, #2196f3, #03a9f4); /* Gradient background for 'Resources' */
   --section-bg4: linear-gradient(135deg, #9c27b0, #e91e63); /* Gradient background for 'Contact' */
