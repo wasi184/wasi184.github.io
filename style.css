@@ -5,6 +5,10 @@
   --text-color: #f0f0f0; /* Light text */
   --button-bg: #ff9800;
   --button-text: #fff;
+  --section-bg1: linear-gradient(135deg, #ff6f61, #ff9f43); /* Gradient background for 'About' */
+  --section-bg2: linear-gradient(135deg, #4caf50, #8bc34a); /* Gradient background for 'Projects' */
+  --section-bg3: linear-gradient(135deg, #2196f3, #03a9f4); /* Gradient background for 'Resources' */
+  --section-bg4: linear-gradient(135deg, #9c27b0, #e91e63); /* Gradient background for 'Contact' */
 }
 
 /* Basic Reset */
@@ -86,6 +90,22 @@ section {
   border-radius: 10px;
 }
 
+#about {
+  background: var(--section-bg1);
+}
+
+#projects {
+  background: var(--section-bg2);
+}
+
+#resources {
+  background: var(--section-bg3);
+}
+
+#contact {
+  background: var(--section-bg4);
+}
+
 section h2 {
   text-align: center;
   margin-bottom: 20px;
@@ -95,13 +115,28 @@ section h2 {
 .button {
   background-color: var(--button-bg);
   color: var(--button-text);
-  padding: 10px 20px;
+  padding: 12px 24px;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  font-size: 16px;
 }
 
+/* Hover effect - Button gets larger and glows */
 .button:hover {
   background-color: #e68a00;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3), 0 2px 6px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
+  color: #fff;
+  text-shadow: 0 0 10px #ff9800, 0 0 20px #ff9800, 0 0 30px #ff9800;
+}
+
+/* Active (When button is pressed) effect */
+.button:active {
+  transform: scale(0.98);
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.3), inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  color: #fff;
 }
 
 /* Footer */
@@ -169,4 +204,34 @@ footer {
   nav.active {
     display: flex;
   }
+}
+
+/* Dark Mode (Slightly Darker) */
+body.dark-mode {
+  background-color: #1c1c1c; /* Slightly darker than original */
+}
+
+body.dark-mode section {
+  background: #2c2c2c; /* Darker sections */
+}
+
+body.dark-mode .dark-mode-toggle {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark-mode header {
+  background-color: #333;
+}
+
+body.dark-mode footer {
+  background-color: #333;
+}
+
+body.dark-mode nav a {
+  color: #e0e0e0;
+}
+
+body.dark-mode nav a:hover {
+  color: var(--accent-color);
 }
