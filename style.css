@@ -21,15 +21,18 @@ body {
   padding: 2rem 1rem; /* updated for mobile layout */
 }
 
+/* Header styles */
 header {
-  background: #222;
+  background: rgba(34, 34, 34, 0.7); /* Semi-transparent */
+  backdrop-filter: blur(8px); /* Blur background behind header */
   color: #fff;
   padding: 1.5rem 0;
   position: sticky;
   top: 0;
   z-index: 1000;
   display: flex;
-  justify-content: center; /* Center the header content */
+  justify-content: center;
+  transition: padding 0.3s ease, background-color 0.3s ease, backdrop-filter 0.3s ease;
 }
 
 header .container {
@@ -37,14 +40,14 @@ header .container {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  width: 100%; /* Match the header width */
-  max-width: 1100px; /* You can keep the max-width if needed */
+  width: 100%;
+  max-width: 1100px;
 }
-
 
 header h1 {
   font-size: 2rem;
-  word-break: break-word; /* updated for mobile layout */
+  word-break: break-word;
+  transition: font-size 0.3s ease;
 }
 
 header p {
@@ -52,6 +55,18 @@ header p {
   margin-top: 0.5rem;
 }
 
+/* Header shrink on scroll */
+header.shrink {
+  padding: 0.8rem 0;
+  background: rgba(34, 34, 34, 0.9); /* Less transparent */
+  backdrop-filter: blur(10px); /* Stronger blur */
+}
+
+header.shrink h1 {
+  font-size: 1.5rem; /* Smaller logo/title */
+}
+
+/* Navigation */
 nav {
   display: flex;
   gap: 1rem;
@@ -80,7 +95,7 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* Dark mode toggle button (NEW cleaned version) */
+/* Dark mode toggle button */
 #dark-mode-toggle {
   width: 40px;
   height: 40px;
@@ -100,6 +115,7 @@ body.dark-mode #dark-mode-toggle {
   background-color: #555;
 }
 
+/* Section styling */
 section {
   padding: 3rem 0;
 }
@@ -110,6 +126,7 @@ h2 {
   font-size: 2rem;
 }
 
+/* Project grid */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -128,6 +145,7 @@ h2 {
   transform: translateY(-5px);
 }
 
+/* Form */
 form {
   display: flex;
   flex-direction: column;
@@ -159,12 +177,13 @@ button[type="submit"]:hover {
   background-color: #444;
 }
 
+/* Social links */
 .social-links {
   text-align: center;
   margin-top: 2rem;
 }
 
-social-links a {
+.social-links a {
   margin: 0 10px;
   font-size: 1.5rem;
   color: #222;
@@ -175,6 +194,7 @@ social-links a {
   color: #0077b5;
 }
 
+/* Footer */
 footer {
   background: #222;
   color: #fff;
@@ -210,7 +230,7 @@ body.dark-mode .social-links a {
 }
 
 body.dark-mode header {
-  background: #1a1a1a;
+  background: rgba(26, 26, 26, 0.8);
 }
 
 /* Blue "View Resources" Button */
@@ -230,7 +250,7 @@ body.dark-mode header {
   transform: scale(1.05);
 }
 
-/* Dark mode - button styling */
+/* Dark mode button styling */
 body.dark-mode .button {
   background-color: #3399ff;
   color: #fff;
@@ -276,6 +296,3 @@ body.dark-mode .button:hover {
     right: 20px;
   }
 }
-
-
-
