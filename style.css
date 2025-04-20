@@ -11,45 +11,48 @@ body {
   background-color: #f5f5f5;
   color: #222;
   transition: background-color 0.3s, color 0.3s;
-  line-height: 1.6;
 }
 
 .container {
   width: 90%;
   max-width: 1100px;
   margin: auto;
-  padding: 0; /* removed extra padding to avoid white gap */
+  padding: 2rem 0;
 }
 
 header {
   background: #222;
   color: #fff;
-  padding: 1.5rem 0; /* big padding normally */
+  padding: 1rem 0;
   position: sticky;
   top: 0;
   z-index: 1000;
-  transition: padding 0.3s ease;
+  transition: padding 0.3s;
 }
 
-header .container {
+header.shrink {
+  padding: 0.5rem 0;
+}
+
+.header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
 
-header h1 {
+.logo-section h1 {
   font-size: 2rem;
 }
 
-header h2 {
-  font-size: 1.1rem;
+.logo-section h2 {
+  font-size: 1rem;
   color: #aaa;
 }
 
 nav {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   align-items: center;
 }
 
@@ -58,7 +61,6 @@ nav a {
   text-decoration: none;
   font-weight: 600;
   position: relative;
-  font-size: 1rem;
 }
 
 nav a::after {
@@ -76,17 +78,15 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* Menu toggle button */
 .menu-toggle {
   display: none;
   background: none;
   border: none;
-  color: #fff;
   font-size: 1.8rem;
+  color: #fff;
   cursor: pointer;
 }
 
-/* Dark Mode Toggle Button */
 #dark-mode-toggle {
   position: fixed;
   top: 20px;
@@ -113,7 +113,6 @@ nav a:hover::after {
 
 #dark-mode-toggle:focus {
   outline: none;
-  box-shadow: none;
 }
 
 section {
@@ -157,7 +156,6 @@ input, textarea {
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 1rem;
-  outline: none;
 }
 
 button[type="submit"] {
@@ -168,7 +166,6 @@ button[type="submit"] {
   color: #fff;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
 button[type="submit"]:hover {
@@ -184,7 +181,6 @@ button[type="submit"]:hover {
   margin: 0 10px;
   font-size: 1.5rem;
   color: #222;
-  transition: color 0.3s;
 }
 
 .social-links a:hover {
@@ -206,7 +202,6 @@ body.dark-mode {
 
 body.dark-mode .project-card {
   background: #1e1e1e;
-  color: #eee;
 }
 
 body.dark-mode input,
@@ -229,7 +224,7 @@ body.dark-mode header {
   background: #1a1a1a;
 }
 
-/* View Resources Button */
+/* Resources Button */
 .button {
   display: inline-block;
   padding: 10px 20px;
@@ -254,18 +249,13 @@ body.dark-mode .button:hover {
   background-color: #007acc;
 }
 
-/* Shrinking header (only reduce padding) */
-header.shrink {
-  padding: 0.7rem 0;
-}
-
-/* Responsive menu for mobile */
+/* Mobile menu */
 @media (max-width: 768px) {
   nav {
     display: none;
     flex-direction: column;
-    background: #222;
     width: 100%;
+    background: #222;
   }
 
   nav.active {
