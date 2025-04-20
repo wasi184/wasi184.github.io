@@ -30,3 +30,13 @@ const toggle = document.getElementById("dark-mode-toggle");
 toggle.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
 });
+
+// Header shrinking on scroll
+const header = document.querySelector('header');
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 50) {
+    header.classList.add('shrink');
+  } else {
+    header.classList.remove('shrink');
+  }
+});
