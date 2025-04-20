@@ -18,21 +18,17 @@ body {
   width: 90%;
   max-width: 1100px;
   margin: auto;
-  padding: 2rem 1rem; /* updated for mobile layout */
+  padding: 2rem 0;
 }
 
-/* Header styles */
 header {
-  background: rgba(34, 34, 34, 0.7); /* Semi-transparent */
-  backdrop-filter: blur(8px); /* Blur background behind header */
+  background: #222;
   color: #fff;
   padding: 1.5rem 0;
   position: sticky;
   top: 0;
   z-index: 1000;
-  display: flex;
-  justify-content: center;
-  transition: padding 0.3s ease, background-color 0.3s ease, backdrop-filter 0.3s ease;
+  transition: padding 0.3s;
 }
 
 header .container {
@@ -40,33 +36,12 @@ header .container {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  width: 100%;
-  max-width: 1100px;
 }
 
 header h1 {
   font-size: 2rem;
-  word-break: break-word;
-  transition: font-size 0.3s ease;
 }
 
-header p {
-  text-align: center;
-  margin-top: 0.5rem;
-}
-
-/* Header shrink on scroll */
-header.shrink {
-  padding: 0.8rem 0;
-  background: rgba(34, 34, 34, 0.9); /* Less transparent */
-  backdrop-filter: blur(10px); /* Stronger blur */
-}
-
-header.shrink h1 {
-  font-size: 1.5rem; /* Smaller logo/title */
-}
-
-/* Navigation */
 nav {
   display: flex;
   gap: 1rem;
@@ -95,27 +70,46 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* Dark mode toggle button */
+/* Menu toggle button */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Dark Mode Toggle Button */
 #dark-mode-toggle {
-  width: 40px;
-  height: 40px;
-  background-color: #fff;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: #444;
+  color: #fff;
+  font-size: 1.5rem;
   border: none;
   border-radius: 50%;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
   transition: background-color 0.3s, transform 0.3s;
-  margin-left: 15px;
 }
 
 #dark-mode-toggle:hover {
+  background: #666;
   transform: scale(1.1);
 }
 
-body.dark-mode #dark-mode-toggle {
-  background-color: #555;
+#dark-mode-toggle:focus {
+  outline: none;
+  box-shadow: none;
 }
 
-/* Section styling */
 section {
   padding: 3rem 0;
 }
@@ -126,7 +120,6 @@ h2 {
   font-size: 2rem;
 }
 
-/* Project grid */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -145,7 +138,6 @@ h2 {
   transform: translateY(-5px);
 }
 
-/* Form */
 form {
   display: flex;
   flex-direction: column;
@@ -177,7 +169,6 @@ button[type="submit"]:hover {
   background-color: #444;
 }
 
-/* Social links */
 .social-links {
   text-align: center;
   margin-top: 2rem;
@@ -194,7 +185,6 @@ button[type="submit"]:hover {
   color: #0077b5;
 }
 
-/* Footer */
 footer {
   background: #222;
   color: #fff;
@@ -202,7 +192,7 @@ footer {
   padding: 1.5rem 0;
 }
 
-/* Dark mode styles */
+/* Dark mode */
 body.dark-mode {
   background-color: #121212;
   color: #eee;
@@ -230,10 +220,10 @@ body.dark-mode .social-links a {
 }
 
 body.dark-mode header {
-  background: rgba(26, 26, 26, 0.8);
+  background: #1a1a1a;
 }
 
-/* Blue "View Resources" Button */
+/* View Resources Button */
 .button {
   display: inline-block;
   padding: 10px 20px;
@@ -250,49 +240,33 @@ body.dark-mode header {
   transform: scale(1.05);
 }
 
-/* Dark mode button styling */
 body.dark-mode .button {
   background-color: #3399ff;
-  color: #fff;
 }
 
 body.dark-mode .button:hover {
   background-color: #007acc;
 }
 
-/* Main navigation for mobile */
-.main-nav {
-  text-align: center;
-  margin-top: 1rem;
-  padding: 1rem 0;
-  background: #222;
+/* Shrinking header */
+header.shrink {
+  padding: 0.8rem 0;
 }
 
-.main-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  margin: 0 15px;
-  font-size: 1.1rem;
-  display: inline-block;
-}
-
-.main-nav a:hover {
-  text-decoration: underline;
-}
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 1.8rem;
+/* Responsive menu for mobile */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #222;
+    width: 100%;
   }
-  .main-nav a {
-    margin: 8px;
-    font-size: 1rem;
+
+  nav.active {
+    display: flex;
   }
-  #dark-mode-toggle {
-    font-size: 1.2rem;
-    margin-top: 10px;
-    right: 20px;
+
+  .menu-toggle {
+    display: block;
   }
 }
