@@ -11,24 +11,22 @@
 
 <body>
 
-<!-- Dark Mode Toggle -->
-<button id="dark-mode-toggle">☀️</button>
-
 <header id="header">
   <div class="container header-container">
     <div class="logo-section">
       <h1>Wasi</h1>
       <h2>Undergrad CSE Student</h2>
     </div>
-    <button class="menu-toggle" id="menu-toggle">
-      <i class="fas fa-bars"></i>
-    </button>
     <nav id="nav-links">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#resources">Resources</a>
       <a href="#contact">Contact</a>
+      <button id="dark-mode-toggle" class="dark-mode-toggle-nav">☀️</button>
     </nav>
+    <button class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </button>
   </div>
 </header>
 
@@ -48,8 +46,7 @@
           <h3>Project 1</h3>
           <p><strong>Clean personal portfolio using only HTML, CSS, and JS.</strong></p>
         </div>
-        
-<div class="project-card">
+        <div class="project-card">
           <h3>Project 2</h3>
           <p><strong>Modern responsive design with animated dark mode toggle feature.</strong></p>
         </div>
@@ -57,15 +54,16 @@
     </div>
   </section>
 
- <section id="resources" class="reveal">
-  <div class="container" style="text-align: center;">
-    <h2>Educational Resources</h2>
-    <p>Explore helpful PDFs for BRAC University admission preparation.</p>
-    <!-- View Resources Button -->
-    <a href="resources.html" class="button">&nbsp;View Resources</a>
-  </div>
-</section>
-
+  <section id="resources" class="reveal">
+    <div class="container" style="text-align: center;">
+      <h2>Educational Resources</h2>
+      <p>Explore helpful PDFs for BRAC University admission preparation.</p>
+      <!-- View Resources Button -->
+      <div style="margin-top: 20px;">
+        <a href="resources.html" class="button">View Resources</a>
+      </div>
+    </div>
+  </section>
 
   <section id="contact" class="section reveal">
     <div class="container">
@@ -82,6 +80,8 @@
     <p>© 2025 VortexRage. All rights reserved.</p>
   </div>
 </footer>
+
 <script src="script.js"></script>
+
 </body>
 </html>
