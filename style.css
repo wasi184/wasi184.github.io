@@ -1,243 +1,222 @@
-:root {
-  --primary-color: #121212;
-  --secondary-color: #1e1e1e;
-  --accent-color: #ff9800;
-  --text-color: #f0f0f0;
-  --button-bg: #ff9800;
-  --button-text: #fff;
-  --section-bg1: linear-gradient(135deg, #ff9800, #ff9f43);
-  --section-bg2: linear-gradient(135deg, #4caf50, #8bc34a);
-  --section-bg3: linear-gradient(135deg, #2196f3, #03a9f4);
-  --section-bg4: linear-gradient(135deg, #9c27b0, #e91e63);
-}
-
-/* Basic Reset */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
   font-family: 'Poppins', sans-serif;
-  background-color: var(--primary-color);
-  color: var(--text-color);
-  scroll-behavior: smooth;
 }
 
-.container {
-  width: 90%;
-  margin: auto;
-  padding: 20px 0;
+/* Smooth Transition Everywhere */
+body, .navbar, .card, .btn {
+  transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease, transform 0.3s ease;
 }
 
-/* Header */
-header {
-  background-color: var(--secondary-color);
-  padding: 10px 0;
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
-.header-container {
+/* Navbar */
+.navbar {
+  background-color: #1e1e1e;
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem 2rem;
 }
 
-/* NEW: Dark Mode button inside header */
-.header-buttons {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-  margin-right: 20px;
-}
-
-#dark-mode-toggle {
-  background: var(--secondary-color);
-  color: var(--text-color);
-  border: none;
-  padding: 10px 12px;
-  font-size: 22px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background 0.3s, color 0.3s;
-}
-
-#dark-mode-toggle:hover {
-  background: var(--accent-color);
-  color: #fff;
-}
-
-/* Logo */
-.logo-section h1 {
-  font-size: 24px;
-}
-
-.logo-section h2 {
-  font-size: 14px;
-  color: #cccccc;
-}
-
-/* Navigation */
-nav {
-  display: flex;
-  gap: 20px;
-}
-
-nav a {
-  color: var(--text-color);
+.nav-links a, .nav-links button {
+  color: white;
+  margin-left: 1.5rem;
   text-decoration: none;
-  font-weight: 600;
-}
-
-nav a:hover {
-  color: var(--accent-color);
-}
-
-/* Menu Toggle for Mobile */
-.menu-toggle {
-  display: none;
+  font-weight: 500;
   background: none;
   border: none;
-  color: var(--text-color);
-  font-size: 24px;
   cursor: pointer;
+  font-size: 1rem;
 }
 
-/* Sections */
-section {
-  padding: 30px 0;
-  background: var(--secondary-color);
-  margin-bottom: 15px;
-  border-radius: 20px; /* More Curved */
-  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5); /* Ultra Shade Effect */
+/* Container */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+  gap: 2rem;
 }
 
-#about {
-  background: var(--section-bg1);
-}
-
-#projects {
-  background: var(--section-bg2);
-}
-
-#resources {
-  background: var(--section-bg3);
-}
-
-#contact {
-  background: var(--section-bg4);
-}
-
-section h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-/* Buttons */
-.button {
-  background-color: var(--button-bg);
-  color: var(--button-text);
-  padding: 12px 24px;
-  text-decoration: none;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-in-out;
-  font-size: 16px;
-  margin-top: 20px; /* ADDED: To fix button cutting text */
-}
-
-/* Hover effect - Button gets larger and glows */
-.button:hover {
-  background-color: #e68a00;
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3), 0 2px 6px rgba(0, 0, 0, 0.2);
-  transform: scale(1.1);
-  color: #fff;
-  text-shadow: 0 0 10px #ff9800, 0 0 20px #ff9800, 0 0 30px #ff9800;
-}
-
-/* Active (Pressed) effect */
-.button:active {
-  transform: scale(0.98);
-  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.3), inset 0 1px 3px rgba(0, 0, 0, 0.1);
-  color: #fff;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px 0;
-  background-color: var(--secondary-color);
-}
-
-/* Scroll reveal animation */
-.reveal {
+/* Cards */
+.card {
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  color: white;
+  padding: 2rem;
+  border-radius: 20px;
+  width: 300px;
+  min-height: 200px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  animation: popIn 0.8s ease forwards;
   opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease;
 }
 
-.reveal.active {
+/* Pop In Animation on Load */
+@keyframes popIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Scroll Reveal */
+.card, .section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.card.visible, .section.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  nav {
-    display: flex; /* NEW: Always show nav links even on mobile */
-    flex-direction: row;
-    gap: 10px;
-    background: none;
-    position: static;
-    width: auto;
-    border-radius: 0;
-    padding: 0;
-  }
-
-  nav a {
-    padding: 5px;
-  }
-
-  .menu-toggle {
-    display: none; /* Hide menu toggle since nav is always visible */
-  }
-
-  .header-buttons {
-    margin-right: 10px;
-  }
+/* Hover Pop and Glow Effect */
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 255, 255, 0.5);
 }
 
-/* Dark Mode (Slightly Darker) */
-body.dark-mode {
-  background-color: #1c1c1c;
+/* Card Variants */
+.project.green {
+  background: linear-gradient(135deg, #11998e, #38ef7d);
 }
 
-body.dark-mode section {
-  background: #2c2c2c;
+.project.blue {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
 }
 
-body.dark-mode #dark-mode-toggle {
-  background-color: #333;
-  color: #fff;
+.resources {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
 }
 
-body.dark-mode header {
-  background-color: #333;
+.contact {
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
 }
 
-body.dark-mode footer {
-  background-color: #333;
+/* Button */
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.2rem;
+  background-color: white;
+  color: #2575fc;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-body.dark-mode nav a {
+.btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* Dark Mode */
+body.dark {
+  background-color: #121212;
   color: #e0e0e0;
 }
 
-body.dark-mode nav a:hover {
-  color: var(--accent-color);
+body.dark .navbar {
+  background-color: #333;
 }
 
+body.dark .card {
+  background: #1e1e1e;
+  color: #e0e0e0;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+}
+
+body.dark .card:hover {
+  box-shadow: 0 12px 30px rgba(0, 200, 255, 0.6);
+}
+
+/* Different Glow for Dark Mode */
+body.dark .project.green:hover {
+  box-shadow: 0 12px 30px rgba(0, 255, 180, 0.6);
+}
+
+body.dark .project.blue:hover {
+  box-shadow: 0 12px 30px rgba(0, 150, 255, 0.6);
+}
+
+body.dark .resources:hover {
+  box-shadow: 0 12px 30px rgba(120, 100, 255, 0.6);
+}
+
+body.dark .contact:hover {
+  box-shadow: 0 12px 30px rgba(255, 80, 200, 0.6);
+}
+
+/* 3D Tilt Effect on Cards */
+.card {
+  perspective: 1000px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: rotateY(10deg) rotateX(10deg);
+}
+
+/* Floating Social Media Icons */
+.social-media {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10;
+}
+
+.social-media a {
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+  color: #2575fc;
+}
+
+/* Custom Cursor */
+body {
+  cursor: url('https://cdn.jsdelivr.net/gh/mbusoft/cursor-pointer@latest/src/cursor-pointer.png'), auto;
+}
+
+/* Smooth Typing Effect */
+#typingEffect {
+  font-size: 2rem;
+  font-family: 'Courier New', Courier, monospace;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  width: 0;
+  animation: typing 5s steps(30) forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
