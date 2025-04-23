@@ -1,37 +1,69 @@
-// Dark Mode Toggle
-const darkToggle = document.getElementById('dark-mode-toggle');
-darkToggle.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
+// Dark mode toggle
+const toggleButton = document.getElementById('darkModeToggle');
+toggleButton.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+  toggleButton.classList.add('clicked');
+
+  // Little shake animation for button
+  setTimeout(() => {
+    toggleButton.classList.remove('clicked');
+  }, 300);
 });
 
-// Menu Toggle for Mobile
-const menuToggle = document.getElementById('menu-toggle');
-const navLinks = document.getElementById('nav-links');
-
-menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('active'); // <-- changed 'show' to 'active'
+// Pop In Animation for Cards on Load
+window.addEventListener('load', () => {
+  document.querySelectorAll('.card').forEach((card, index) => {
+    setTimeout(() => {
+      card.style.opacity = '1';
+    }, index * 200); // Stagger the animation
+  });
 });
 
-// Shrink Header on Scroll
-window.addEventListener('scroll', () => {
-  const header = document.getElementById('header');
-  if (window.scrollY > 50) {
-    header.classList.add('shrink');
-  } else {
-    header.classList.remove('shrink');
-  }
-
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  reveals.forEach((reveal) => {
-    const windowHeight = window.innerHeight;
-    const elementTop = reveal.getBoundingClientRect().top;
-    const elementVisible = 150;
-
-    if (elementTop < windowHeight - elementVisible) {
-      reveal.classList.add('active');
-    } else {
-      reveal.classList.remove('active');
+// Scroll Reveal Animation
+const revealElements = document.querySelectorAll('.card, .section');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
     }
   });
+}, { threshold: 0.1 });
+
+revealElements.forEach((el) => {
+  observer.observe(el);
+});
+
+// Smooth Section Scrolling
+const navLinks = document.querySelectorAll('.navbar a');
+navLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const targetSection = document.querySelector(link.getAttribute('href'));
+    targetSection.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+// Confetti on Button Click
+const confettiButton = document.getElementById('confettiButton');
+confettiButton.addEventListener('click', () => {
+  confetti();
+});
+
+// Particles.js initialization
+particlesJS('particles-js', {
+  particles: {
+    number: {
+      value: 80,
+      density: {
+        enable: true,
+        value_area: 800
+      }
+    },
+    shape: {
+      type: 'circle',
+    },
+    move: {
+      speed: 3
+    }
+  }
 });
