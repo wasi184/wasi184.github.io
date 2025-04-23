@@ -1,87 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wasi || Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/a2e8e6f65e.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wasi | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script> <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script> <!-- Confetti.js -->
 </head>
-
 <body>
+  <div id="particles-js"></div>
 
-<header id="header">
-  <div class="container header-container">
-    <div class="logo-section">
-      <h1>Wasi</h1>
-      <h2>Undergrad CSE Student</h2>
-    </div>
-    <nav id="nav-links">
-      <a href="#about">&nbsp;&nbsp;About</a>
+  <nav class="navbar">
+    <div class="logo">Wasi</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#resources">Resources</a>
-      <a href="#contact">Contact</a>
-      <button id="dark-mode-toggle" class="dark-mode-toggle-nav">☀️</button>
-    </nav>
-    <button class="menu-toggle" id="menu-toggle">
-      <i class="fas fa-bars"></i>
-    </button>
-  </div>
-</header>
-
-<main>
-  <section id="about" class="section reveal">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>Hi, I'm Wasi — a dedicated learner on a journey to become a skilled software engineer. I'm currently exploring programming with Java, Python, and SQL, while also building a strong foundation in Object-Oriented Programming and Machine Learning. Alongside technical skills, I’m developing my copywriting abilities to better communicate ideas clearly and effectively. My long-term goal is to specialize in Large Language Models and Artificial Intelligence, where I can combine logic, creativity, and real-world impact.</p>
+      <button id="darkModeToggle">🌙</button>
     </div>
-  </section>
+  </nav>
 
-  <section id="projects" class="section reveal">
-    <div class="container">
+  <section class="container">
+    <div id="about" class="card about section">
+      <h2>About Me</h2>
+      <p>Hi, I’m Wasi—dedicated learner on a journey to become a skilled software engineer. I’m currently exploring programming with Java, Python, and SQL while building a strong foundation in Object-Oriented Programming and Machine Learning. My long-term goal is to specialize in Large Language Models and Artificial Intelligence.</p>
+    </div>
+
+    <div id="projects" class="card project green section">
       <h2>Projects</h2>
-      <div class="project-grid">
-        <div class="project-card">
-          <h3>Project 1</h3>
-          <p><strong>Clean personal portfolio using only HTML, CSS, and JS.</strong></p>
-        </div>
-        <div class="project-card">
-          <h3>Project 2</h3>
-          <p><strong>Modern responsive design with animated dark mode toggle feature.</strong></p>
-        </div>
+      <div class="project-item">
+        <h3>Project 1</h3>
+        <p>Clean personal portfolio using only HTML, CSS, and JS.</p>
+      </div>
+      <div class="project-item">
+        <h3>Project 2</h3>
+        <p>Modern responsive design with animated dark mode toggle feature.</p>
       </div>
     </div>
-  </section>
 
-  <section id="resources" class="reveal">
-    <div class="container" style="text-align: center;">
+    <div id="resources" class="card resources section">
       <h2>Educational Resources</h2>
       <p>Explore helpful PDFs for BRAC University admission preparation.</p>
-      <!-- View Resources Button -->
-      <div style="margin-top: 20px;">
-        <a href="resources.html" class="button">View Resources</a>
-      </div>
+      <a href="#" class="btn" id="confettiButton">View Resources</a>
     </div>
-  </section>
 
-  <section id="contact" class="section reveal">
-    <div class="container">
+    <div class="card contact">
       <h2>Contact Me</h2>
-      <p><strong>Name:</strong> Wasi</p>
-      <p><strong>Email:</strong> vortexrage05@gmail.com</p>
-      <p><strong>GitHub:</strong> <a href="https://github.com/wasi184" target="_blank">github.com/wasi184</a></p>
+      <p>Wasi</p>
+      <p>vortexrage05@gmail.com</p>
+      <p>github.com/wasi184</p>
     </div>
   </section>
-</main>
 
-<footer>
-  <div class="container">
-    <p>© 2025 VortexRage. All rights reserved.</p>
-  </div>
-</footer>
+  <h1 id="typingEffect">Wasi | Learner | Developer | Dreamer</h1>
 
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
