@@ -51,7 +51,7 @@ body, .navbar, .card, .btn {
   min-height: 200px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   animation: popIn 0.8s ease forwards;
-  opacity: 0;
+  opacity: 0; /* Ensure it's initially hidden */
 }
 
 /* Pop In Animation on Load */
@@ -66,6 +66,7 @@ body, .navbar, .card, .btn {
   }
   100% {
     transform: scale(1);
+    opacity: 1; /* Ensure full visibility */
   }
 }
 
