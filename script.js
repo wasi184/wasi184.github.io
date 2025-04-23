@@ -14,10 +14,11 @@ toggleButton.addEventListener('click', () => {
 window.addEventListener('load', () => {
   document.querySelectorAll('.card').forEach((card, index) => {
     setTimeout(() => {
-      card.style.opacity = '1';
-    }, index * 200); // Stagger the animation
+      card.style.opacity = '1'; // Ensures the card stays visible after the animation
+    }, index * 200); // Stagger the animation for each card
   });
 });
+
 
 // Scroll Reveal Animation
 const revealElements = document.querySelectorAll('.card, .section');
