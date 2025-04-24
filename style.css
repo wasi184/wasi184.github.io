@@ -1,68 +1,244 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Wasi || Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script> <!-- Particles.js -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script> <!-- Confetti.js -->
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
-  <div id="particles-js"></div> <!-- Particles.js container -->
+/* Smooth Transition Everywhere */
+body, .navbar, .card, .btn {
+  transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease, transform 0.3s ease;
+}
 
-  <nav class="navbar">
-    <div class="logo">Wasi</div>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#resources">Resources</a>
-      <button id="darkModeToggle">🌙</button>
-    </div>
-  </nav>
-  
-  <h4 id="typingEffect">Undergrad CSE student</h4>
-  
-  <section class="container">
-    <div id="about" class="card about section">
-      <h2>About Me</h2>
-      <p>Hi, I’m Wasi—dedicated learner on a journey to become a skilled software engineer...</p>
-    </div>
-    <div id="projects" class="card project green section">
-      <h2>Projects</h2>
-      <div class="project-item">
-        <h3>Project 1</h3>
-        <p>Clean personal portfolio using only HTML, CSS, and JS.</p>
-      </div>
-    </div>
-    <div id="resources" class="card resources section">
-      <h2>Educational Resources</h2>
-      <p>Explore helpful PDFs for BRAC University admission preparation.</p>
-      <a href="resources.html" class="btn" id="confettiButton">View Resources</a>
-    </div>
-    <div class="card contact">
-      <h2>Contact Me</h2>
-      <p>Wasi</p>
-      <p>vortexrage05@gmail.com</p>
-      <p>github.com/wasi184</p>
-    </div>
-  </section>
-  
-  <footer>
-    <div class="container">
-      <p>© 2025 VortexRage. All rights reserved.</p>
-    </div>
-  </footer>
+/* Navbar */
+.navbar {
+  background-color: #1e1e1e;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
 
-  <script src="script.js"></script>
+.nav-links a, .nav-links button {
+  color: white;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
 
-  <!-- Floating Social Media Icons -->
-  <div class="simple-socials">
-    <a href="https://github.com/your-username" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-    <a href="mailto:your@email.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-    <a href="https://linkedin.com/in/your-profile" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-  </div>
-</body>
-</html>
+/* Container */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+/* Cards */
+.card {
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  color: white;
+  padding: 2rem;
+  border-radius: 20px;
+  width: 300px;
+  min-height: 200px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  animation: popIn 0.8s ease forwards;
+  opacity: 0; /* Ensure it's initially hidden */
+}
+
+/* Pop In Animation on Load */
+@keyframes popIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1; /* Ensure full visibility */
+  }
+}
+
+/* Scroll Reveal */
+.card, .section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.card.visible, .section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover Pop and Glow Effect */
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 255, 255, 0.5);
+}
+
+/* Card Variants */
+.project.green {
+  background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+
+.project.blue {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+}
+
+.resources {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+.contact {
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.2rem;
+  background-color: white;
+  color: #2575fc;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* Dark Mode */
+body.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark .navbar {
+  background-color: #333;
+}
+
+body.dark .card {
+  background: #1e1e1e;
+  color: #e0e0e0;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+}
+
+body.dark .card:hover {
+  box-shadow: 0 12px 30px rgba(0, 200, 255, 0.6);
+}
+
+/* Different Glow for Dark Mode */
+body.dark .project.green:hover {
+  box-shadow: 0 12px 30px rgba(0, 255, 180, 0.6);
+}
+
+body.dark .project.blue:hover {
+  box-shadow: 0 12px 30px rgba(0, 150, 255, 0.6);
+}
+
+body.dark .resources:hover {
+  box-shadow: 0 12px 30px rgba(120, 100, 255, 0.6);
+}
+
+body.dark .contact:hover {
+  box-shadow: 0 12px 30px rgba(255, 80, 200, 0.6);
+}
+
+/* 3D Tilt Effect on Cards */
+.card {
+  perspective: 1000px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: rotateY(10deg) rotateX(10deg);
+}
+
+/* Floating Social Media Icons */
+.social-media {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10;
+}
+
+.social-media a {
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+  color: #2575fc;
+}
+
+/* Custom Cursor */
+body {
+  cursor: url('https://cdn.jsdelivr.net/gh/mbusoft/cursor-pointer@latest/src/cursor-pointer.png'), auto;
+}
+
+/* Smooth Typing Effect - Adjusted */
+#typingEffect {
+  font-size: 1rem; /* Smaller text */
+  font-family: 'Courier New', Courier, monospace;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid;
+  width: 0;
+  animation: typing 3s steps(30) forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+/* Simple Floating Social Icons */
+.simple-socials {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 25px;
+  z-index: 1000;
+}
+
+.simple-socials a {
+  font-size: 26px;
+  color: #ffffff;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.simple-socials a:hover {
+  color: #00c9ff;
+  transform: scale(1.2);
+}
