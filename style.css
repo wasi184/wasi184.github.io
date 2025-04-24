@@ -169,7 +169,7 @@ body.dark .contact:hover {
 }
 
 /* Floating Social Media Icons */
-.social-media {
+/*.social-media {
   position: fixed;
   bottom: 10px;
   left: 10px;
@@ -188,7 +188,36 @@ body.dark .contact:hover {
 
 .social-media a:hover {
   color: #2575fc;
+}*/
+/* Social Icons Inside Contact Card */
+.simple-socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
 }
+
+.top-socials,
+.bottom-socials {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.simple-socials a {
+  font-size: 1.8rem;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.simple-socials a:hover {
+  transform: scale(1.2);
+  color: #00bcd4;
+}
+
 
 /* Custom Cursor */
 body {
