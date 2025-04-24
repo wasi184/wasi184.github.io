@@ -195,17 +195,33 @@ body {
   cursor: url('https://cdn.jsdelivr.net/gh/mbusoft/cursor-pointer@latest/src/cursor-pointer.png'), auto;
 }
 
-/* Smooth Typing Effect */
+/* Smooth Typing Effect - Adjusted */
 #typingEffect {
-  font-size: 2rem;
+  font-size: 1rem; /* Smaller text */
   font-family: 'Courier New', Courier, monospace;
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 3px solid;
+  border-right: 2px solid;
   width: 0;
-  animation: typing 5s steps(30) forwards, blink 0.75s step-end infinite;
+  animation: typing 3s steps(30) forwards, blink 0.75s step-end infinite;
 }
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
 
 @keyframes typing {
   0% {
