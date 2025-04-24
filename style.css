@@ -51,7 +51,8 @@ body, .navbar, .card, .btn {
   min-height: 200px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   animation: popIn 0.8s ease forwards;
-  opacity: 0; /* Ensure it's initially hidden */
+  opacity: 0;
+  perspective: 1000px;
 }
 
 /* Pop In Animation on Load */
@@ -66,7 +67,7 @@ body, .navbar, .card, .btn {
   }
   100% {
     transform: scale(1);
-    opacity: 1; /* Ensure full visibility */
+    opacity: 1;
   }
 }
 
@@ -84,7 +85,7 @@ body, .navbar, .card, .btn {
 
 /* Hover Pop and Glow Effect */
 .card:hover {
-  transform: scale(1.05);
+  transform: rotateY(10deg) rotateX(10deg);
   box-shadow: 0 12px 25px rgba(0, 255, 255, 0.5);
 }
 
@@ -115,6 +116,7 @@ body, .navbar, .card, .btn {
   border-radius: 10px;
   font-weight: bold;
   text-decoration: none;
+  transition: 0.3s ease;
 }
 
 .btn:hover {
@@ -141,7 +143,6 @@ body.dark .card:hover {
   box-shadow: 0 12px 30px rgba(0, 200, 255, 0.6);
 }
 
-/* Different Glow for Dark Mode */
 body.dark .project.green:hover {
   box-shadow: 0 12px 30px rgba(0, 255, 180, 0.6);
 }
@@ -158,37 +159,6 @@ body.dark .contact:hover {
   box-shadow: 0 12px 30px rgba(255, 80, 200, 0.6);
 }
 
-/* 3D Tilt Effect on Cards */
-.card {
-  perspective: 1000px;
-  transition: transform 0.3s ease;
-}
-
-.card:hover {
-  transform: rotateY(10deg) rotateX(10deg);
-}
-
-/* Floating Social Media Icons */
-/*.social-media {
-  position: fixed;
-  bottom: 10px;
-  left: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 10;
-}
-
-.social-media a {
-  font-size: 1.5rem;
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.social-media a:hover {
-  color: #2575fc;
-}*/
 /* Social Icons Inside Contact Card */
 .simple-socials {
   display: flex;
@@ -218,15 +188,14 @@ body.dark .contact:hover {
   color: #00bcd4;
 }
 
-
 /* Custom Cursor */
 body {
   cursor: url('https://cdn.jsdelivr.net/gh/mbusoft/cursor-pointer@latest/src/cursor-pointer.png'), auto;
 }
 
-/* Smooth Typing Effect - Adjusted */
+/* Typing Effect */
 #typingEffect {
-  font-size: 1rem; /* Smaller text */
+  font-size: 1rem;
   font-family: 'Courier New', Courier, monospace;
   display: inline-block;
   white-space: nowrap;
@@ -250,6 +219,7 @@ body {
     border-color: transparent;
   }
 }
+
 /* Simple Floating Social Icons */
 .simple-socials {
   position: fixed;
@@ -270,4 +240,58 @@ body {
 .simple-socials a:hover {
   color: #00c9ff;
   transform: scale(1.2);
+}
+
+/* ✅ Green Neon Glow Button */
+.neon-glow {
+  display: inline-block;
+  padding: 12px 24px;
+  color: #fff;
+  background-color: #111;
+  border: 2px solid #39ff14;
+  border-radius: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+  box-shadow: 0 0 10px #39ff1450, 0 0 20px #39ff1430;
+}
+
+.neon-glow:hover {
+  background-color: #39ff14;
+  color: #111;
+  box-shadow: 
+    0 0 5px #39ff14,
+    0 0 10px #39ff14,
+    0 0 20px #39ff14,
+    0 0 40px #39ff14;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+@keyframes neonPulse {
+  0% {
+    box-shadow: 0 0 10px #39ff1450, 0 0 20px #39ff1430;
+  }
+  50% {
+    box-shadow: 0 0 15px #39ff14, 0 0 30px #39ff1480;
+  }
+  100% {
+    box-shadow: 0 0 10px #39ff1450, 0 0 20px #39ff1430;
+  }
+}
+
+.neon-glow.pulsing {
+  animation: neonPulse 1.5s infinite alternate;
+}
+
+body.dark .neon-glow {
+  border-color: #00ff00;
+  box-shadow: 0 0 15px #00ff0070, 0 0 25px #00ff0030;
+}
+
+body.dark .neon-glow:hover {
+  background-color: #00ff00;
+  color: #000;
+  box-shadow: 0 0 5px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00;
 }
