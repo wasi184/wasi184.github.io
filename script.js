@@ -46,18 +46,27 @@ navLinks.forEach(link => {
 
 const confettiButton = document.getElementById('confettiButton');
 confettiButton.addEventListener('click', (e) => {
-  e.preventDefault(); // stop immediate navigation
-  confetti({
-    particleCount: 100,
-    spread: 70,
-    origin: { y: 0.6 }
-  });
+  e.preventDefault();
 
-  // Redirect after short delay so confetti can finish
-  setTimeout(() => {
-    window.location.href = "resources.html";
-  }, 800); // You can increase this if the confetti is still too fast
+  const duration = 1 * 1000;
+  const animationEnd = Date.now() + duration;
+  const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1000 };
+
+  const interval = setInterval(() => {
+    const timeLeft = animationEnd - Date.now();
+
+    if (timeLeft <= 0) {
+      clearInterval(interval);
+      // now redirect
+      window.location.href = "resources.html";
+      return;
+    }
+
+    const particleCount = 50 * (timeLeft / duration);
+    confetti(Object.assign({}, defaults, { particleCount, origin: { x: Math.random(), y: Math.random() - 0.2 } }));
+  }, 250);
 });
+
 
 // Particles.js initialization
 particlesJS('particles-js', {
