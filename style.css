@@ -221,3 +221,25 @@ body {
     border-color: transparent;
   }
 }
+/* Simple Floating Social Icons */
+.simple-socials {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 25px;
+  z-index: 1000;
+}
+
+.simple-socials a {
+  font-size: 26px;
+  color: #ffffff;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.simple-socials a:hover {
+  color: #00c9ff;
+  transform: scale(1.2);
+}
+
