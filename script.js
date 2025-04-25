@@ -86,3 +86,18 @@ particlesJS('particles-js', {
     }
   }
 });
+
+// 3D Tilt Effect on .card elements
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const { offsetX, offsetY, target } = e;
+    const { offsetWidth, offsetHeight } = target;
+    const rotateX = ((offsetY / offsetHeight) - 0.5) * 20;
+    const rotateY = ((offsetX / offsetWidth) - 0.5) * -20;
+    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = `rotateX(0deg) rotateY(0deg)`;
+  });
+});
+
