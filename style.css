@@ -8,7 +8,19 @@
 
 /* Smooth Transition Everywhere */
 body, .navbar, .card, .btn {
+  transition: background-color 0.5s ease, color 0.5s ease, /* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Body and Transitions */
+body, .navbar, .card, .btn {
   transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease, transform 0.3s ease;
+  background-color: #f5f5f5;
+  color: #333;
 }
 
 /* Navbar */
@@ -19,6 +31,9 @@ body, .navbar, .card, .btn {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
 .nav-links a, .nav-links button {
@@ -50,46 +65,31 @@ body, .navbar, .card, .btn {
   width: 300px;
   min-height: 200px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  animation: popIn 0.8s ease forwards;
   opacity: 0;
-
-  /* Added for 3D tilt */
   perspective: 1000px;
   transform-style: preserve-3d;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.5s ease;
 }
 
-/* Pop In Animation on Load */
+/* Pop In Animation */
 @keyframes popIn {
-  0% {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-  80% {
-    transform: scale(1.05);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+  0% { transform: scale(0.5); opacity: 0; }
+  80% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
 }
 
-/* Scroll Reveal */
+/* Scroll Reveal Animation */
 .card, .section {
-  opacity: 0;
   transform: translateY(50px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .card.visible, .section.visible {
-  opacity: 1;
   transform: translateY(0);
+  opacity: 1;
 }
 
-/* Hover Pop and Glow Effect */
+/* Card Hover Tilt */
 .card:hover {
-  transform: rotateY(10deg) rotateX(10deg); /* still compatible with JS tilt override */
   box-shadow: 0 12px 25px rgba(0, 255, 255, 0.5);
 }
 
@@ -97,26 +97,17 @@ body, .navbar, .card, .btn {
 .project.green {
   background: linear-gradient(135deg, #11998e, #38ef7d);
 }
-
 .project.blue {
   background: linear-gradient(135deg, #00c6ff, #0072ff);
 }
-
 .resources {
   background: linear-gradient(135deg, #6a11cb, #2575fc);
 }
-
 .contact {
   background: linear-gradient(135deg, #ff6a00, #ee0979);
 }
-
-/* 🌟 Blog Card */
 .blog {
   background: linear-gradient(135deg, #8e2de2, #4a00e0);
-}
-
-body.dark .blog:hover {
-  box-shadow: 0 12px 30px rgba(138, 43, 226, 0.6);
 }
 
 /* Button */
@@ -141,64 +132,51 @@ body.dark {
   background-color: #121212;
   color: #e0e0e0;
 }
-
 body.dark .navbar {
   background-color: #333;
 }
-
 body.dark .card {
   background: #1e1e1e;
   color: #e0e0e0;
   box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
 }
-
 body.dark .card:hover {
   box-shadow: 0 12px 30px rgba(0, 200, 255, 0.6);
 }
-
 body.dark .project.green:hover {
   box-shadow: 0 12px 30px rgba(0, 255, 180, 0.6);
 }
-
 body.dark .project.blue:hover {
   box-shadow: 0 12px 30px rgba(0, 150, 255, 0.6);
 }
-
 body.dark .resources:hover {
   box-shadow: 0 12px 30px rgba(120, 100, 255, 0.6);
 }
-
 body.dark .contact:hover {
   box-shadow: 0 12px 30px rgba(255, 80, 200, 0.6);
 }
+body.dark .blog:hover {
+  box-shadow: 0 12px 30px rgba(138, 43, 226, 0.6);
+}
 
-/* Social Icons Inside Contact Card */
+/* Social Icons */
 .simple-socials {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  margin-top: 20px;
+  gap: 25px;
+  z-index: 1000;
 }
-
-.top-socials,
-.bottom-socials {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
 .simple-socials a {
-  font-size: 1.8rem;
-  color: white;
-  text-decoration: none;
-  transition: transform 0.3s ease;
+  font-size: 26px;
+  color: #ffffff;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
-
 .simple-socials a:hover {
+  color: #00c9ff;
   transform: scale(1.2);
-  color: #00bcd4;
 }
 
 /* Custom Cursor */
@@ -210,49 +188,18 @@ body {
 #typingEffect {
   font-size: 1rem;
   font-family: 'Courier New', Courier, monospace;
-  display: inline-block;
   white-space: nowrap;
   overflow: hidden;
   border-right: 2px solid;
   width: 0;
   animation: typing 3s steps(30) forwards, blink 0.75s step-end infinite;
 }
-
 @keyframes typing {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
+  from { width: 0; }
+  to { width: 100%; }
 }
-
 @keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
-
-/* Simple Floating Social Icons */
-.simple-socials {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 25px;
-  z-index: 1000;
-}
-
-.simple-socials a {
-  font-size: 26px;
-  color: #ffffff;
-  transition: color 0.3s ease, transform 0.2s ease;
-}
-
-.simple-socials a:hover {
-  color: #00c9ff;
-  transform: scale(1.2);
+  50% { border-color: transparent; }
 }
 
 /* 3D Button */
@@ -268,7 +215,6 @@ body {
   text-decoration: none;
   display: inline-block;
 }
-
 .btn-3d:active {
   box-shadow: 0 2px #004d00;
   transform: translateY(3px);
