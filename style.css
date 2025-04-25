@@ -252,7 +252,7 @@ body {
 }
 
 /* ✅ Green Neon Glow Button */
-.neon-glow {
+/*.neon-glow {
   display: inline-block;
   padding: 12px 24px;
   color: #fff;
@@ -303,4 +303,22 @@ body.dark .neon-glow:hover {
   background-color: #00ff00;
   color: #000;
   box-shadow: 0 0 5px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00;
+}*/
+.btn-3d {
+  background: linear-gradient(to bottom, #90ee90, #006400); /* light green to dark green */
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 5px #004d00;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
 }
+
+.btn-3d:active {
+  box-shadow: 0 2px #004d00;
+  transform: translateY(3px);
+}
+
