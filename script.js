@@ -118,4 +118,12 @@ document.addEventListener("DOMContentLoaded", () => {
       card.style.transform = 'rotateX(0deg) rotateY(0deg)';
     });
   });
+ScrollReveal().reveal('.logic-lab-card', {
+  origin: 'bottom',
+  distance: '50px',
+  duration: 1000,
+  delay: 300,
+  reset: false
+});
+
 });
