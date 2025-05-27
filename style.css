@@ -274,7 +274,7 @@ body {
   transform: translateY(3px);
 }
 
-.card.logic-lab-card {
+/*.card.logic-lab-card {
   background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
   border: 2px solid #00ffff;
   color: #00ffff;
@@ -318,4 +318,26 @@ body {
 .card.logic-lab-card .card-button:hover {
   background-color: #00cccc;
   transform: scale(1.05);
+}*/
+.some-other-style {
+  margin-bottom: 20px;
 }
+
+.logic-lab-card {
+  border: none !important;
+  background-color: transparent;
+  color: white !important;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.logic-lab-card h3,
+.logic-lab-card p {
+  color: white !important;
+}
+
+.logic-lab-card:hover {
+  box-shadow: 0 0 25px 5px rgba(0, 255, 255, 0.6),
+              0 0 50px 10px rgba(0, 255, 255, 0.3);
+  transform: translateY(-5px) scale(1.02);
+}
+
