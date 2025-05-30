@@ -323,7 +323,7 @@ body {
   margin-bottom: 20px;
 }
 
-.logic-lab-card {
+/*.logic-lab-card {
   border: none !important;
   background-color: transparent;
   color: white !important;
@@ -339,5 +339,25 @@ body {
   box-shadow: 0 0 25px 5px rgba(0, 255, 255, 0.6),
               0 0 50px 10px rgba(0, 255, 255, 0.3);
   transform: translateY(-5px) scale(1.02);
+}*/ THIS IS THE OLD CODE FOR LOGIC LAB with NO BUTTON EFFECT
+
+.logic-lab-card .card-button {
+  padding: 14px 26px;
+  border: none;
+  border-radius: 40px;
+  font-size: 1rem;
+  font-weight: normal;
+  color: #fff;
+  background: linear-gradient(135deg, #6e00ff, #ae00ff);
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 12px rgba(174, 0, 255, 0.3);
 }
+
+.logic-lab-card .card-button:hover {
+  background: linear-gradient(135deg, #ae00ff, #6e00ff);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px 6px rgba(174, 0, 255, 0.6);
+}
+
 
