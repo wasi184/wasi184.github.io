@@ -339,7 +339,7 @@ body {
   box-shadow: 0 0 25px 5px rgba(0, 255, 255, 0.6),
               0 0 50px 10px rgba(0, 255, 255, 0.3);
   transform: translateY(-5px) scale(1.02);
-}*/ THIS IS THE OLD CODE FOR LOGIC LAB with NO BUTTON EFFECT
+}*/ /*THIS IS THE OLD CODE FOR LOGIC LAB with NO BUTTON EFFECT*/
 
 .logic-lab-card .card-button {
   padding: 14px 26px;
