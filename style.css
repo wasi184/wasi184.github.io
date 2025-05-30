@@ -360,4 +360,44 @@ body {
   box-shadow: 0 0 20px 6px rgba(174, 0, 255, 0.6);
 }
 
+/* Logic Lab Card Full Styling (with previous modifications + glowing hover border) */
+.logic-lab-card {
+  background: linear-gradient(135deg, #1f1f1f, #2c003e); /* Deep gradient background */
+  border: 2px solid transparent;
+  border-radius: 1.5rem;
+  color: white;
+  padding: 2rem;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+  transition: box-shadow 0.4s ease, border 0.4s ease, transform 0.3s ease;
+}
+
+/* Glowing border on hover */
+.logic-lab-card:hover {
+  border: 2px solid #a855f7; /* Purple border */
+  box-shadow: 0 0 20px 6px rgba(168, 85, 247, 0.6); /* Glow effect */
+  transform: scale(1.03);
+}
+
+/* Logic Lab Card Button Styling */
+.logic-lab-card .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  border-radius: 2rem;
+  border: none;
+  color: white;
+  background: linear-gradient(to right, #8e2de2, #4a00e0); /* Gradient background */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Button glow on hove  r */
+.logic-lab-card .btn:hover {
+  box-shadow: 0 0 12px 4px rgba(168, 85, 247, 0.7); /* Purple glow */
+  transform: scale(1.05);
+}
+                      
+
 
