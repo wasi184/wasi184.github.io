@@ -292,6 +292,15 @@ body {
   transform: scale(1.03);
 }
 
+@media (prefers-color-scheme: dark) {
+  .card.logic-lab-card:hover {
+    border: 2px solid #a855f7; /* Purple border */
+    box-shadow: 0 0 20px 6px rgba(168, 85, 247, 0.6); /* Purple glow */
+    transform: scale(1.03);
+  }
+}
+
+
 .card.logic-lab-card h3 {
   font-size: 1.8rem;
   margin-bottom: 12px;
@@ -353,4 +362,6 @@ body {
   opacity: 1;
   right: 10px;
 }
+
+
 
