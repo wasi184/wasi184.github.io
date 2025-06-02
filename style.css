@@ -275,22 +275,26 @@ body {
 }
 
 /* === Logic Lab Card Final Styling === */
+
 .card.logic-lab-card {
-  background: linear-gradient(135deg, #1f1f1f, #2c003e); /* Deep purple gradient */
+  background: linear-gradient(135deg, #0a0f0f, #002d2d); /* Futuristic dark teal */
   border: 2px solid transparent;
   border-radius: 1.5rem;
-  color: white;
+  color: #ccfaff;
   padding: 2rem;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.1);
   transition: box-shadow 0.4s ease, border 0.4s ease, transform 0.3s ease;
   text-align: center;
 }
 
+
+
 .card.logic-lab-card:hover {
-  border: 2px solid #a855f7; /* Glowing purple border */
+  border: 2px solid #a855f7;
   box-shadow: 0 0 20px 6px rgba(168, 85, 247, 0.6);
   transform: scale(1.03);
 }
+
 
 @media (prefers-color-scheme: dark) {
   .card.logic-lab-card:hover {
