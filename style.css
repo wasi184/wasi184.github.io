@@ -274,125 +274,39 @@ body {
   transform: translateY(3px);
 }
 
-/*.card.logic-lab-card {
-  background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
-  border: 2px solid #00ffff;
-  color: #00ffff;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 255, 255, 0.2);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  padding: 30px;
+/* === Logic Lab Card Final Styling === */
+.card.logic-lab-card {
+  background: linear-gradient(135deg, #1f1f1f, #2c003e); /* Deep purple gradient */
+  border: 2px solid transparent;
+  border-radius: 1.5rem;
+  color: white;
+  padding: 2rem;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+  transition: box-shadow 0.4s ease, border 0.4s ease, transform 0.3s ease;
   text-align: center;
 }
 
 .card.logic-lab-card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 20px 40px rgba(0, 255, 255, 0.3);
+  border: 2px solid #a855f7; /* Glowing purple border */
+  box-shadow: 0 0 20px 6px rgba(168, 85, 247, 0.6);
+  transform: scale(1.03);
 }
 
 .card.logic-lab-card h3 {
   font-size: 1.8rem;
   margin-bottom: 12px;
   font-weight: bold;
-  color: #00e6e6;
+  color: #d9bdfc;
 }
 
 .card.logic-lab-card p {
   font-size: 1.1rem;
   font-weight: 500;
-  color: #ccffff;
+  color: #e5dbff;
   margin-bottom: 16px;
 }
 
-.card.logic-lab-card .card-button {
-  background-color: #00ffff;
-  color: #000;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 10px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.card.logic-lab-card .card-button:hover {
-  background-color: #00cccc;
-  transform: scale(1.05);
-}*//*
-.some-other-style {
-  margin-bottom: 20px;
-}*/
-
-/*.logic-lab-card {
-  border: none !important;
-  background-color: transparent;
-  color: white !important;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.logic-lab-card h3,
-.logic-lab-card p {
-  color: white !important;
-}
-
-.logic-lab-card:hover {
-  box-shadow: 0 0 25px 5px rgba(0, 255, 255, 0.6),
-              0 0 50px 10px rgba(0, 255, 255, 0.3);
-  transform: translateY(-5px) scale(1.02);
-}*/ /*THIS IS THE OLD CODE FOR LOGIC LAB with NO BUTTON EFFECT*/
-
-/*.logic-lab-card .card-button {
-  padding: 14px 26px;
-  border: none;
-  border-radius: 40px;
-  font-size: 1rem;
-  font-weight: normal;
-  color: #fff;
-  background: linear-gradient(135deg, #6e00ff, #ae00ff);
-  cursor: pointer;
-  transition: all 0.4s ease;
-  box-shadow: 0 4px 12px rgba(174, 0, 255, 0.3);
-}
-
-.logic-lab-card .card-button:hover {
-  background: linear-gradient(135deg, #ae00ff, #6e00ff);
-  transform: scale(1.05);
-  box-shadow: 0 0 20px 6px rgba(174, 0, 255, 0.6);
-}
-
-/* Logic Lab Card Full Styling (with previous modifications + glowing hover border) */
-/*.logic-lab-card {
-  background: linear-gradient(135deg, #1f1f1f, #2c003e); /* Deep gradient background */
- /* border: 2px solid transparent;
-  border-radius: 1.5rem;
-  color: white;
-  padding: 2rem;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
-  transition: box-shadow 0.4s ease, border 0.4s ease, transform 0.3s ease;
-}*/*/
-
-/* Glowing border on hover */
-/*.logic-lab-card:hover {
-  border: 2px solid #a855f7; /* Purple border */
- /* box-shadow: 0 0 20px 6px rgba(168, 85, 247, 0.6); /* Glow effect */*/
-  /*transform: scale(1.03);*/
-}*/
-
-/* Logic Lab Card Button Styling */
-/*.logic-lab-card .btn {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.9rem 2rem;
-  font-size: 1rem;
-  border-radius: 2rem;
-  border: none;
-  color: white;
-  background: linear-gradient(to right, #8e2de2, #4a00e0); /* Gradient background */
- /* cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}*/*/
-
+/* === Logic Lab Button Styling (Jump In) === */
 .css-button-arrow--blue {
   min-width: 140px;
   height: 45px;
@@ -409,8 +323,9 @@ body {
   border: none;
   font-size: 16px;
   letter-spacing: 0.5px;
-  background: linear-gradient(135deg, #6c3dd2, #b73dda);
+  background: linear-gradient(135deg, #6c3dd2, #b73dda); /* Unified purple gradient */
   box-shadow: 0 0 12px rgba(179, 77, 255, 0.5), 0 0 20px rgba(108, 61, 210, 0.4);
+  z-index: 1;
 }
 
 .css-button-arrow--blue:hover {
@@ -419,17 +334,18 @@ body {
   padding-left: 12px;
   box-shadow: 0 0 18px rgba(179, 77, 255, 0.8), 0 0 30px rgba(183, 61, 218, 0.6);
   transform: scale(1.02);
+  z-index: 2;
 }
 
 .css-button-arrow--blue:after {
-  content: "\00BB";
+  content: "\00BB"; /* » */
   position: absolute;
   opacity: 0;
   font-size: 22px;
   line-height: 45px;
   top: 0;
   right: -20px;
-  transition: 0.4s;
+  transition: 0.4s ease;
   color: #ffffff;
 }
 
@@ -437,13 +353,4 @@ body {
   opacity: 1;
   right: 10px;
 }
-
-
-/* Button glow on hover */
-/*.logic-lab-card .btn:hover {
-  box-shadow: 0 0 12px 4px rgba(168, 85, 247, 0.7); /* Purple glow */
-  /*transform: scale(1.05);*/
-}*/ /*THIS IS THE OLD ONE*/*/
-                      
-
 
