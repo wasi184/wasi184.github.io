@@ -318,10 +318,10 @@ body {
 .card.logic-lab-card .card-button:hover {
   background-color: #00cccc;
   transform: scale(1.05);
-}*/
+}*//*
 .some-other-style {
   margin-bottom: 20px;
-}
+}*/
 
 /*.logic-lab-card {
   border: none !important;
@@ -341,7 +341,7 @@ body {
   transform: translateY(-5px) scale(1.02);
 }*/ /*THIS IS THE OLD CODE FOR LOGIC LAB with NO BUTTON EFFECT*/
 
-.logic-lab-card .card-button {
+/*.logic-lab-card .card-button {
   padding: 14px 26px;
   border: none;
   border-radius: 40px;
@@ -361,25 +361,25 @@ body {
 }
 
 /* Logic Lab Card Full Styling (with previous modifications + glowing hover border) */
-.logic-lab-card {
+/*.logic-lab-card {
   background: linear-gradient(135deg, #1f1f1f, #2c003e); /* Deep gradient background */
-  border: 2px solid transparent;
+ /* border: 2px solid transparent;
   border-radius: 1.5rem;
   color: white;
   padding: 2rem;
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
   transition: box-shadow 0.4s ease, border 0.4s ease, transform 0.3s ease;
-}
+}*/*/
 
 /* Glowing border on hover */
-.logic-lab-card:hover {
+/*.logic-lab-card:hover {
   border: 2px solid #a855f7; /* Purple border */
-  box-shadow: 0 0 20px 6px rgba(168, 85, 247, 0.6); /* Glow effect */
-  transform: scale(1.03);
-}
+ /* box-shadow: 0 0 20px 6px rgba(168, 85, 247, 0.6); /* Glow effect */*/
+  /*transform: scale(1.03);*/
+}*/
 
 /* Logic Lab Card Button Styling */
-.logic-lab-card .btn {
+/*.logic-lab-card .btn {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.9rem 2rem;
@@ -388,16 +388,62 @@ body {
   border: none;
   color: white;
   background: linear-gradient(to right, #8e2de2, #4a00e0); /* Gradient background */
-  cursor: pointer;
+ /* cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}*/*/
+
+.css-button-arrow--blue {
+  min-width: 140px;
+  height: 45px;
+  color: #fff;
+  padding: 5px 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  outline: none;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  background: linear-gradient(135deg, #6c3dd2, #b73dda);
+  box-shadow: 0 0 12px rgba(179, 77, 255, 0.5), 0 0 20px rgba(108, 61, 210, 0.4);
 }
 
-/* Button glow on hove  r */
-.logic-lab-card .btn:hover {
-  box-shadow: 0 0 12px 4px rgba(168, 85, 247, 0.7); /* Purple glow */
-  transform: scale(1.05);
+.css-button-arrow--blue:hover {
+  border-radius: 16px;
+  padding-right: 30px;
+  padding-left: 12px;
+  box-shadow: 0 0 18px rgba(179, 77, 255, 0.8), 0 0 30px rgba(183, 61, 218, 0.6);
+  transform: scale(1.02);
 }
+
+.css-button-arrow--blue:after {
+  content: "\00BB";
+  position: absolute;
+  opacity: 0;
+  font-size: 22px;
+  line-height: 45px;
+  top: 0;
+  right: -20px;
+  transition: 0.4s;
+  color: #ffffff;
+}
+
+.css-button-arrow--blue:hover:after {
+  opacity: 1;
+  right: 10px;
+}
+
+
+/* Button glow on hover */
+/*.logic-lab-card .btn:hover {
+  box-shadow: 0 0 12px 4px rgba(168, 85, 247, 0.7); /* Purple glow */
+  /*transform: scale(1.05);*/
+}*/ /*THIS IS THE OLD ONE*/*/
                       
 
 
