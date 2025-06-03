@@ -1,3 +1,27 @@
+/* === Optional Alternate Gradient Button === */
+.css-button-gradient--4 {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  background-size: 120% auto;
+  background-image: linear-gradient(315deg, #43cea2 0%, #185a9d 75%);
+}
+.css-button-gradient--4:hover {
+  background-position: right center;
+}
+.css-button-gradient--4:active {
+  top: 2px;
+}
+This is the new background color I want in the CSS code: 
 /* Reset */
 * {
   margin: 0;
@@ -263,4 +287,3 @@ body.dark .contact:hover       { box-shadow: 0 12px 30px rgba(255, 80, 200, 0.6)
 .css-button-gradient--4:active {
   top: 2px;
 }
-
