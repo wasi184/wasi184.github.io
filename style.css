@@ -6,9 +6,16 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* Smooth Transition Everywhere */
+/* Smooth Transition */
 body, .navbar, .card, .btn {
   transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease, transform 0.3s ease;
+}
+
+/* === Galactic Core Background === */
+body {
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  color: white;
+  cursor: url('https://cdn.jsdelivr.net/gh/mbusoft/cursor-pointer@latest/src/cursor-pointer.png'), auto;
 }
 
 /* Navbar */
@@ -52,27 +59,16 @@ body, .navbar, .card, .btn {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   animation: popIn 0.8s ease forwards;
   opacity: 0;
-
-  /* Added for 3D tilt */
   perspective: 1000px;
   transform-style: preserve-3d;
   transition: transform 0.2s ease;
 }
 
-/* Pop In Animation on Load */
+/* Pop In Animation */
 @keyframes popIn {
-  0% {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-  80% {
-    transform: scale(1.05);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+  0% { transform: scale(0.5); opacity: 0; }
+  80% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
 }
 
 /* Scroll Reveal */
@@ -81,129 +77,50 @@ body, .navbar, .card, .btn {
   transform: translateY(50px);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
-
 .card.visible, .section.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Hover Pop and Glow Effect */
+/* Card Glow and Tilt */
 .card:hover {
-  transform: rotateY(10deg) rotateX(10deg); /* still compatible with JS tilt override */
+  transform: rotateY(10deg) rotateX(10deg);
   box-shadow: 0 12px 25px rgba(0, 255, 255, 0.5);
 }
 
 /* Card Variants */
-.project.green {
-  background: linear-gradient(135deg, #11998e, #38ef7d);
-}
+.project.green { background: linear-gradient(135deg, #11998e, #38ef7d); }
+.project.blue  { background: linear-gradient(135deg, #00c6ff, #0072ff); }
+.resources     { background: linear-gradient(135deg, #6a11cb, #2575fc); }
+.contact       { background: linear-gradient(135deg, #ff6a00, #ee0979); }
+.blog          { background: linear-gradient(135deg, #8e2de2, #4a00e0); }
 
-.project.blue {
-  background: linear-gradient(135deg, #00c6ff, #0072ff);
-}
+/* Dark Hover Effects */
+body.dark .blog:hover           { box-shadow: 0 12px 30px rgba(138, 43, 226, 0.6); }
+body.dark .project.green:hover { box-shadow: 0 12px 30px rgba(0, 255, 180, 0.6); }
+body.dark .project.blue:hover  { box-shadow: 0 12px 30px rgba(0, 150, 255, 0.6); }
+body.dark .resources:hover     { box-shadow: 0 12px 30px rgba(120, 100, 255, 0.6); }
+body.dark .contact:hover       { box-shadow: 0 12px 30px rgba(255, 80, 200, 0.6); }
 
-.resources {
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-}
-
-.contact {
-  background: linear-gradient(135deg, #ff6a00, #ee0979);
-}
-
-/* 🌟 Blog Card */
-.blog {
-  background: linear-gradient(135deg, #8e2de2, #4a00e0);
-}
-
-body.dark .blog:hover {
-  box-shadow: 0 12px 30px rgba(138, 43, 226, 0.6);
-}
-
-/* Button */
-.btn {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.7rem 1.2rem;
-  background-color: white;
-  color: #2575fc;
-  border-radius: 10px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #f0f0f0;
-}
-
-/* Dark Mode */
-body.dark {
-  background-color: #121212;
-  color: #e0e0e0;
-}
-
-body.dark .navbar {
-  background-color: #333;
-}
-
-body.dark .card {
-  background: #1e1e1e;
-  color: #e0e0e0;
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
-}
-
-body.dark .card:hover {
-  box-shadow: 0 12px 30px rgba(0, 200, 255, 0.6);
-}
-
-body.dark .project.green:hover {
-  box-shadow: 0 12px 30px rgba(0, 255, 180, 0.6);
-}
-
-body.dark .project.blue:hover {
-  box-shadow: 0 12px 30px rgba(0, 150, 255, 0.6);
-}
-
-body.dark .resources:hover {
-  box-shadow: 0 12px 30px rgba(120, 100, 255, 0.6);
-}
-
-body.dark .contact:hover {
-  box-shadow: 0 12px 30px rgba(255, 80, 200, 0.6);
-}
-
-/* Social Icons Inside Contact Card */
+/* Social Icons */
 .simple-socials {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  margin-top: 20px;
+  gap: 25px;
+  z-index: 1000;
 }
-
-.top-socials,
-.bottom-socials {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
 .simple-socials a {
   font-size: 1.8rem;
   color: white;
   text-decoration: none;
   transition: transform 0.3s ease;
 }
-
 .simple-socials a:hover {
   transform: scale(1.2);
   color: #00bcd4;
-}
-
-/* Custom Cursor */
-body {
-  cursor: url('https://cdn.jsdelivr.net/gh/mbusoft/cursor-pointer@latest/src/cursor-pointer.png'), auto;
 }
 
 /* Typing Effect */
@@ -217,42 +134,12 @@ body {
   width: 0;
   animation: typing 3s steps(30) forwards, blink 0.75s step-end infinite;
 }
-
 @keyframes typing {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
+  0% { width: 0; }
+  100% { width: 100%; }
 }
-
 @keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
-
-/* Simple Floating Social Icons */
-.simple-socials {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 25px;
-  z-index: 1000;
-}
-
-.simple-socials a {
-  font-size: 26px;
-  color: #ffffff;
-  transition: color 0.3s ease, transform 0.2s ease;
-}
-
-.simple-socials a:hover {
-  color: #00c9ff;
-  transform: scale(1.2);
+  50% { border-color: transparent; }
 }
 
 /* 3D Button */
@@ -268,16 +155,14 @@ body {
   text-decoration: none;
   display: inline-block;
 }
-
 .btn-3d:active {
   box-shadow: 0 2px #004d00;
   transform: translateY(3px);
 }
 
-/* === Logic Lab Card Final Styling === */
-
+/* === Logic Lab Card (Updated Glow & Border to Cyan) === */
 .card.logic-lab-card {
-  background: linear-gradient(135deg, #0a0f0f, #002d2d); /* Futuristic dark teal */
+  background: linear-gradient(135deg, #0a0f0f, #002d2d);
   border: 2px solid transparent;
   border-radius: 1.5rem;
   color: #ccfaff;
@@ -286,40 +171,31 @@ body {
   transition: box-shadow 0.4s ease, border 0.4s ease, transform 0.3s ease;
   text-align: center;
 }
-
-
-
 .card.logic-lab-card:hover {
-  border: 2px solid #a855f7;
-  box-shadow: 0 0 20px 6px rgba(168, 85, 247, 0.6);
-  transform: scale(1.03);
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 22px 6px rgba(0, 255, 255, 0.6);
+  transform: rotateY(8deg) rotateX(8deg);
 }
-
-
 @media (prefers-color-scheme: dark) {
   .card.logic-lab-card:hover {
-    border: 2px solid #a855f7; /* Purple border */
-    box-shadow: 0 0 20px 6px rgba(168, 85, 247, 0.6); /* Purple glow */
-    transform: scale(1.03);
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 22px 6px rgba(0, 255, 255, 0.6);
   }
 }
-
-
 .card.logic-lab-card h3 {
   font-size: 1.8rem;
   margin-bottom: 12px;
   font-weight: bold;
-  color: #d9bdfc;
+  color: #d9faff;
 }
-
 .card.logic-lab-card p {
   font-size: 1.1rem;
   font-weight: 500;
-  color: #e5dbff;
+  color: #e5fcff;
   margin-bottom: 16px;
 }
 
-/* === Logic Lab Button Styling (Jump In) === */
+/* === Logic Lab Button (Jump In) === */
 .css-button-arrow--blue {
   min-width: 140px;
   height: 45px;
@@ -336,22 +212,20 @@ body {
   border: none;
   font-size: 16px;
   letter-spacing: 0.5px;
-  background: linear-gradient(135deg, #6c3dd2, #b73dda); /* Unified purple gradient */
-  box-shadow: 0 0 12px rgba(179, 77, 255, 0.5), 0 0 20px rgba(108, 61, 210, 0.4);
+  background: linear-gradient(135deg, #00bcd4, #007c91);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 188, 212, 0.4);
   z-index: 1;
 }
-
 .css-button-arrow--blue:hover {
   border-radius: 16px;
   padding-right: 30px;
   padding-left: 12px;
-  box-shadow: 0 0 18px rgba(179, 77, 255, 0.8), 0 0 30px rgba(183, 61, 218, 0.6);
-  transform: scale(1.02);
+  box-shadow: 0 0 18px rgba(0, 255, 255, 0.8), 0 0 30px rgba(0, 188, 212, 0.6);
+  transform: scale(1.05);
   z-index: 2;
 }
-
 .css-button-arrow--blue:after {
-  content: "\00BB"; /* » */
+  content: "\00BB";
   position: absolute;
   opacity: 0;
   font-size: 22px;
@@ -361,36 +235,7 @@ body {
   transition: 0.4s ease;
   color: #ffffff;
 }
-
 .css-button-arrow--blue:hover:after {
   opacity: 1;
   right: 10px;
 }
-
-/* === Optional Alternate Gradient Button === */
-.css-button-gradient--4 {
-  min-width: 130px;
-  height: 40px;
-  color: #fff;
-  padding: 5px 10px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-  outline: none;
-  border-radius: 5px;
-  border: none;
-  background-size: 120% auto;
-  background-image: linear-gradient(315deg, #43cea2 0%, #185a9d 75%);
-}
-.css-button-gradient--4:hover {
-  background-position: right center;
-}
-.css-button-gradient--4:active {
-  top: 2px;
-}
-
-
-
-
