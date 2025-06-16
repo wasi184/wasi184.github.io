@@ -1,48 +1,29 @@
 // Wait until DOM is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
-  document.addEventListener("DOMContentLoaded", () => {
-  // Dark mode toggle
+  // === DARK MODE TOGGLE ===
   const toggleButton = document.getElementById('darkModeToggle');
   if (toggleButton) {
-    // Initialize button icon based on saved mode (optional)
-    if (document.body.classList.contains('dark')) {
-      toggleButton.textContent = '☀️';
-    } else {
-      toggleButton.textContent = '🌙';
-    }
+    // Set initial icon based on mode
+    toggleButton.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
 
     toggleButton.addEventListener('click', () => {
       document.body.classList.toggle('dark');
-
-      // Change button icon based on mode
-      if (document.body.classList.contains('dark')) {
-        toggleButton.textContent = '☀️'; // Sun for light mode
-      } else {
-        toggleButton.textContent = '🌙'; // Moon for dark mode
-      }
-
-      // Little shake animation for button
+      toggleButton.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
       toggleButton.classList.add('clicked');
-      setTimeout(() => {
-        toggleButton.classList.remove('clicked');
-      }, 300);
+      setTimeout(() => toggleButton.classList.remove('clicked'), 300);
     });
   }
 
- 
-});
-
-
-  // Pop In Animation for Cards on Load
+  // === CARD POP-IN ANIMATION ON LOAD ===
   window.addEventListener('load', () => {
     document.querySelectorAll('.card').forEach((card, index) => {
       setTimeout(() => {
-        card.style.opacity = '1'; // Ensures the card stays visible after the animation
-      }, index * 200); // Stagger the animation
+        card.style.opacity = '1';
+      }, index * 200);
     });
   });
 
-  // Scroll Reveal Animation
+  // === SCROLL REVEAL ANIMATION ===
   const revealElements = document.querySelectorAll('.card, .section');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -52,13 +33,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }, { threshold: 0.1 });
 
-  revealElements.forEach((el) => {
-    observer.observe(el);
-  });
+  revealElements.forEach(el => observer.observe(el));
 
-  // Smooth Section Scrolling
-  const navLinks = document.querySelectorAll('.navbar a');
-  navLinks.forEach(link => {
+  // === SMOOTH SCROLLING FOR NAV LINKS ===
+  document.querySelectorAll('.navbar a').forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
       const targetSection = document.querySelector(link.getAttribute('href'));
@@ -68,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Confetti on button click and redirect
+  // === CONFETTI BUTTON LOGIC ===
   const confettiButton = document.getElementById('confettiButton');
   if (confettiButton) {
     confettiButton.addEventListener('click', (e) => {
@@ -80,13 +58,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const interval = setInterval(() => {
         const timeLeft = animationEnd - Date.now();
-
         if (timeLeft <= 0) {
           clearInterval(interval);
           window.location.href = "resources.html";
           return;
         }
-
         const particleCount = 50 * (timeLeft / duration);
         confetti(Object.assign({}, defaults, {
           particleCount,
@@ -96,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Particles.js initialization
+  // === PARTICLES.JS INIT ===
   if (document.getElementById('particles-js')) {
     particlesJS('particles-js', {
       particles: {
@@ -108,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         },
         shape: {
-          type: 'circle',
+          type: 'circle'
         },
         move: {
           speed: 3
@@ -117,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 3D Tilt Effect on Cards
+  // === 3D TILT ON CARD HOVER ===
   document.querySelectorAll('.card').forEach(card => {
     card.style.transformStyle = "preserve-3d";
     card.style.transition = "transform 0.2s ease";
@@ -137,12 +113,15 @@ document.addEventListener("DOMContentLoaded", () => {
       card.style.transform = 'rotateX(0deg) rotateY(0deg)';
     });
   });
-ScrollReveal().reveal('.logic-lab-card', {
-  origin: 'bottom',
-  distance: '50px',
-  duration: 1000,
-  delay: 300,
-  reset: false
-});
 
+  // === OPTIONAL: SCROLLREVEAL (Only if ScrollReveal.js is included) ===
+  if (typeof ScrollReveal !== 'undefined') {
+    ScrollReveal().reveal('.logic-lab-card', {
+      origin: 'bottom',
+      distance: '50px',
+      duration: 1000,
+      delay: 300,
+      reset: false
+    });
+  }
 });
