@@ -1,18 +1,37 @@
 // Wait until DOM is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("DOMContentLoaded", () => {
   // Dark mode toggle
   const toggleButton = document.getElementById('darkModeToggle');
   if (toggleButton) {
+    // Initialize button icon based on saved mode (optional)
+    if (document.body.classList.contains('dark')) {
+      toggleButton.textContent = '☀️';
+    } else {
+      toggleButton.textContent = '🌙';
+    }
+
     toggleButton.addEventListener('click', () => {
       document.body.classList.toggle('dark');
-      toggleButton.classList.add('clicked');
+
+      // Change button icon based on mode
+      if (document.body.classList.contains('dark')) {
+        toggleButton.textContent = '☀️'; // Sun for light mode
+      } else {
+        toggleButton.textContent = '🌙'; // Moon for dark mode
+      }
 
       // Little shake animation for button
+      toggleButton.classList.add('clicked');
       setTimeout(() => {
         toggleButton.classList.remove('clicked');
       }, 300);
     });
   }
+
+ 
+});
+
 
   // Pop In Animation for Cards on Load
   window.addEventListener('load', () => {
