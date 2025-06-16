@@ -7,9 +7,9 @@
 }
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #0a0a0a;
-  color: #ffffff;
-  transition: background 0.3s, color 0.3s;
+  background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+  color: #000;
+  transition: background 0.4s ease, color 0.3s;
 }
 a {
   color: inherit;
@@ -67,10 +67,11 @@ a {
   border-radius: 16px;
   backdrop-filter: blur(8px);
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
-  transition: transform 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card:hover {
-  transform: scale(1.02);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 .card h2 {
   font-size: 1.8rem;
@@ -78,6 +79,26 @@ a {
 }
 .card p {
   line-height: 1.6;
+}
+
+/* RESPONSIVE HEIGHT FIX FOR LARGE SCREENS */
+@media (min-width: 768px) {
+  .card {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    height: auto;
+  }
+
+  .card.about,
+  .card.project,
+  .card.resources,
+  .card.blog,
+  .card.contact,
+  .logic-lab-card {
+    max-height: 400px;
+    overflow-y: auto;
+  }
 }
 
 /* TYPING EFFECT */
@@ -173,20 +194,20 @@ footer {
 }
 
 /* DARK MODE */
-body.dark {
-  background: #f4f4f4;
-  color: #111;
+body.dark-mode {
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 5%, rgba(9, 9, 121, 1) 47%, rgba(0, 212, 255, 1) 100%);
+  color: white;
 }
-body.dark .navbar {
-  background: #ddd;
+body.dark-mode .navbar {
+  background: #111;
 }
-body.dark .card {
-  background: rgba(0, 0, 0, 0.05);
-  color: #000;
+body.dark-mode .card {
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
 }
-body.dark .btn-glow {
+body.dark-mode .btn-glow {
   box-shadow: 0 0 10px #7f00ff;
 }
-body.dark .css-button-gradient--4 {
+body.dark-mode .css-button-gradient--4 {
   box-shadow: 0 0 10px #7f00ff;
 }
