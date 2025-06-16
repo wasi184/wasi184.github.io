@@ -1,332 +1,192 @@
-/* === Optional Alternate Gradient Button === */
-.css-button-gradient--4 {
-  min-width: 130px;
-  height: 40px;
-  color: #fff;
-  padding: 5px 10px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-  outline: none;
-  border-radius: 5px;
-  border: none;
-  background-size: 120% auto;
-  background-image: linear-gradient(315deg, #43cea2 0%, #185a9d 75%);
-}
-.css-button-gradient--4:hover {
-  background-position: right center;
-}
-.css-button-gradient--4:active {
-  top: 2px;
-}
-This is the new background color I want in the CSS code: 
-/* Reset */
+/* RESET & BASE */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
 }
-
-/* Smooth Transition */
-body, .navbar, .card, .btn {
-  transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease, transform 0.3s ease;
-}
-
-/* === Galactic Core Background === */
 body {
-  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-  color: white;
-  cursor: url('https://cdn.jsdelivr.net/gh/mbusoft/cursor-pointer@latest/src/cursor-pointer.png'), auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #0a0a0a;
+  color: #ffffff;
+  transition: background 0.3s, color 0.3s;
 }
-
-/* Navbar */
-.navbar {
-  background-color: #1e1e1e;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-}
-
-.nav-links a, .nav-links button {
-  color: white;
-  margin-left: 1.5rem;
+a {
+  color: inherit;
   text-decoration: none;
-  font-weight: 500;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
 }
-
-/* Container */
 .container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
 }
 
-/* Cards */
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #111;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+.navbar .logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  background: linear-gradient(45deg, #00f2fe, #4facfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.nav-links a {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+#darkModeToggle {
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* SECTION CARDS */
 .card {
-  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: scale(1.02);
+}
+.card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.card p {
+  line-height: 1.6;
+}
+
+/* TYPING EFFECT */
+#typingEffect {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 1.5rem 2rem;
+  color: #0ff;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* BUTTONS */
+.btn, .css-button-gradient--4 {
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+.btn-glow {
+  background: linear-gradient(45deg, #ff00cc, #3333ff);
   color: white;
+  box-shadow: 0 0 15px #ff00cc;
+}
+.btn-glow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px #ff66ff;
+}
+
+/* LOGIC LAB SPECIAL */
+.logic-lab-card {
+  background: linear-gradient(135deg, #111, #222);
+  border: 1px solid #0ff;
   padding: 2rem;
   border-radius: 20px;
-  width: 300px;
-  min-height: 200px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  animation: popIn 0.8s ease forwards;
-  opacity: 0;
-  perspective: 1000px;
-  transform-style: preserve-3d;
-  transition: transform 0.2s ease;
+  position: relative;
+}
+.logic-lab-card h3 {
+  font-size: 1.5rem;
+  color: #0ff;
+}
+.css-button-gradient--4 {
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  color: white;
+  box-shadow: 0 0 12px #fc00ff;
+}
+.css-button-gradient--4:hover {
+  box-shadow: 0 0 20px #fc00ff;
+  transform: scale(1.05);
 }
 
-/* Pop In Animation */
-@keyframes popIn {
-  0% { transform: scale(0.5); opacity: 0; }
-  80% { transform: scale(1.05); opacity: 1; }
-  100% { transform: scale(1); opacity: 1; }
+/* CONTACT SOCIALS */
+.contact .simple-socials {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.top-socials, .bottom-socials {
+  display: flex;
+  gap: 1rem;
+}
+.contact a i {
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+.contact a:hover i {
+  color: #0ff;
+  transform: scale(1.2);
 }
 
-/* Scroll Reveal */
-.card, .section {
+/* FOOTER */
+footer {
+  padding: 2rem;
+  text-align: center;
+  background: #111;
+  font-size: 0.9rem;
+  margin-top: 4rem;
+}
+
+/* SCROLL REVEAL ANIMATION */
+.section, .card {
   opacity: 0;
   transform: translateY(50px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
-.card.visible, .section.visible {
+.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Card Glow and Tilt */
-.card:hover {
-  transform: rotateY(10deg) rotateX(10deg);
-  box-shadow: 0 12px 25px rgba(0, 255, 255, 0.5);
-}
-
-/* Card Variants */
-.project.green { background: linear-gradient(135deg, #11998e, #38ef7d); }
-.project.blue  { background: linear-gradient(135deg, #00c6ff, #0072ff); }
-.resources     { background: linear-gradient(135deg, #6a11cb, #2575fc); }
-.contact       { background: linear-gradient(135deg, #ff6a00, #ee0979); }
-.blog          { background: linear-gradient(135deg, #8e2de2, #4a00e0); }
-
-/* Dark Hover Effects */
-body.dark .blog:hover           { box-shadow: 0 12px 30px rgba(138, 43, 226, 0.6); }
-body.dark .project.green:hover { box-shadow: 0 12px 30px rgba(0, 255, 180, 0.6); }
-body.dark .project.blue:hover  { box-shadow: 0 12px 30px rgba(0, 150, 255, 0.6); }
-body.dark .resources:hover     { box-shadow: 0 12px 30px rgba(120, 100, 255, 0.6); }
-body.dark .contact:hover       { box-shadow: 0 12px 30px rgba(255, 80, 200, 0.6); }
-
-/* Social Icons */
-.simple-socials {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 25px;
-  z-index: 1000;
-}
-.simple-socials a {
-  font-size: 1.8rem;
-  color: white;
-  text-decoration: none;
-  transition: transform 0.3s ease;
-}
-.simple-socials a:hover {
-  transform: scale(1.2);
-  color: #00bcd4;
-}
-
-/* Typing Effect */
-#typingEffect {
-  font-size: 1rem;
-  font-family: 'Courier New', Courier, monospace;
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 2px solid;
-  width: 0;
-  animation: typing 3s steps(30) forwards, blink 0.75s step-end infinite;
-}
-@keyframes typing {
-  0% { width: 0; }
-  100% { width: 100%; }
-}
-@keyframes blink {
-  50% { border-color: transparent; }
-}
-
-/* 3D Button */
-.btn-3d {
-  background: linear-gradient(to bottom, #90ee90, #006400);
-  color: white;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  box-shadow: 0 5px #004d00;
-  transition: all 0.2s ease;
-  text-decoration: none;
-  display: inline-block;
-}
-.btn-3d:active {
-  box-shadow: 0 2px #004d00;
-  transform: translateY(3px);
-}
-
-/* === Logic Lab Card (Updated Glow & Border to Cyan) === */
-.card.logic-lab-card {
-  background: linear-gradient(135deg, #0a0f0f, #002d2d);
-  border: 2px solid transparent;
-  border-radius: 1.5rem;
-  color: #ccfaff;
-  padding: 2rem;
-  box-shadow: 0 0 12px rgba(0, 255, 255, 0.1);
-  transition: box-shadow 0.4s ease, border 0.4s ease, transform 0.3s ease;
-  text-align: center;
-}
-.card.logic-lab-card:hover {
-  border: 2px solid #00ffff;
-  box-shadow: 0 0 22px 6px rgba(0, 255, 255, 0.6);
-  transform: rotateY(8deg) rotateX(8deg);
-}
-@media (prefers-color-scheme: dark) {
-  .card.logic-lab-card:hover {
-    border: 2px solid #00ffff;
-    box-shadow: 0 0 22px 6px rgba(0, 255, 255, 0.6);
-  }
-}
-.card.logic-lab-card h3 {
-  font-size: 1.8rem;
-  margin-bottom: 12px;
-  font-weight: bold;
-  color: #d9faff;
-}
-.card.logic-lab-card p {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #e5fcff;
-  margin-bottom: 16px;
-}
-
-/* === Logic Lab Button (Jump In) === */
-.css-button-arrow--blue {
-  min-width: 140px;
-  height: 45px;
-  color: #fff;
-  padding: 5px 15px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  outline: none;
-  border-radius: 12px;
-  border: none;
-  font-size: 16px;
-  letter-spacing: 0.5px;
-  background: linear-gradient(135deg, #00bcd4, #007c91);
-  box-shadow: 0 0 12px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 188, 212, 0.4);
-  z-index: 1;
-}
-.css-button-arrow--blue:hover {
-  border-radius: 16px;
-  padding-right: 30px;
-  padding-left: 12px;
-  box-shadow: 0 0 18px rgba(0, 255, 255, 0.8), 0 0 30px rgba(0, 188, 212, 0.6);
-  transform: scale(1.05);
-  z-index: 2;
-}
-.css-button-arrow--blue:after {
-  content: "\00BB";
-  position: absolute;
-  opacity: 0;
-  font-size: 22px;
-  line-height: 45px;
-  top: 0;
-  right: -20px;
-  transition: 0.4s ease;
-  color: #ffffff;
-}
-.css-button-arrow--blue:hover:after {
-  opacity: 1;
-  right: 10px;
-}
-
-/* === Optional Alternate Gradient Button === */
-.css-button-gradient--4 {
-  min-width: 130px;
-  height: 40px;
-  color: #fff;
-  padding: 5px 10px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-  outline: none;
-  border-radius: 5px;
-  border: none;
-  background-size: 120% auto;
-  background-image: linear-gradient(315deg, #43cea2 0%, #185a9d 75%);
-}
-.css-button-gradient--4:hover {
-  background-position: right center;
-}
-.css-button-gradient--4:active {
-  top: 2px;
-}
-
-/* Default light mode styles (you probably have these already) */
-body {
-  background-color: #fff;
-  color: #111;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.navbar {
-  background-color: #f0f0f0;
-  color: #111;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.navbar a, .navbar button {
-  color: #111;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-/* Dark mode styles */
+/* DARK MODE */
 body.dark {
-  background-color: #121212;
-  color: #e0e0e0;
+  background: #f4f4f4;
+  color: #111;
 }
-
 body.dark .navbar {
-  background-color: #1f1f1f;
-  color: #e0e0e0;
+  background: #ddd;
 }
-
-body.dark .navbar a,
-body.dark .navbar button {
-  color: #e0e0e0;
+body.dark .card {
+  background: rgba(0, 0, 0, 0.05);
+  color: #000;
 }
-
-/* Optional: Change button style on click */
-#darkModeToggle.clicked {
-  transform: scale(1.2);
-  transition: transform 0.3s ease;
+body.dark .btn-glow {
+  box-shadow: 0 0 10px #7f00ff;
 }
-
-
+body.dark .css-button-gradient--4 {
+  box-shadow: 0 0 10px #7f00ff;
+}
