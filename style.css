@@ -287,3 +287,46 @@ body.dark .contact:hover       { box-shadow: 0 12px 30px rgba(255, 80, 200, 0.6)
 .css-button-gradient--4:active {
   top: 2px;
 }
+
+/* Default light mode styles (you probably have these already) */
+body {
+  background-color: #fff;
+  color: #111;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar {
+  background-color: #f0f0f0;
+  color: #111;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar a, .navbar button {
+  color: #111;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Dark mode styles */
+body.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark .navbar {
+  background-color: #1f1f1f;
+  color: #e0e0e0;
+}
+
+body.dark .navbar a,
+body.dark .navbar button {
+  color: #e0e0e0;
+}
+
+/* Optional: Change button style on click */
+#darkModeToggle.clicked {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
+
+
