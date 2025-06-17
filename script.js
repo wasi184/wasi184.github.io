@@ -1,61 +1,54 @@
-// Wait until DOM is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
-  // === DARK MODE TOGGLE ===
-  const toggleButton = document.getElementById('darkModeToggle');
-  if (toggleButton) {
-    // Set initial icon based on mode
-    toggleButton.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+  const toggleButton = document.getElementById("darkModeToggle");
 
-    toggleButton.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-      toggleButton.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
-      toggleButton.classList.add('clicked');
-      setTimeout(() => toggleButton.classList.remove('clicked'), 300);
-    });
+  // Load dark mode state from localStorage
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+    toggleButton.textContent = "☀️";
+  } else {
+    toggleButton.textContent = "🌙";
   }
 
-  // === CARD POP-IN ANIMATION ON LOAD ===
-  window.addEventListener('load', () => {
-    document.querySelectorAll('.card').forEach((card, index) => {
-      setTimeout(() => {
-        card.style.opacity = '1';
-      }, index * 200);
-    });
+  // Toggle dark mode and store preference
+  toggleButton.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    const isDark = document.body.classList.contains("dark-mode");
+    toggleButton.textContent = isDark ? "☀️" : "🌙";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+    toggleButton.classList.add("clicked");
+    setTimeout(() => toggleButton.classList.remove("clicked"), 300);
   });
 
-  // === SCROLL REVEAL ANIMATION ===
-  const revealElements = document.querySelectorAll('.card, .section');
+  // Reveal cards on scroll
+  const revealElements = document.querySelectorAll(".card, .section");
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+        entry.target.classList.add("visible");
       }
     });
   }, { threshold: 0.1 });
+  revealElements.forEach((el) => observer.observe(el));
 
-  revealElements.forEach(el => observer.observe(el));
-
-  // === SMOOTH SCROLLING FOR NAV LINKS ===
-  document.querySelectorAll('.navbar a').forEach(link => {
-    link.addEventListener('click', (e) => {
+  // Smooth scrolling for nav links
+  document.querySelectorAll(".navbar a").forEach((link) => {
+    link.addEventListener("click", (e) => {
       e.preventDefault();
-      const targetSection = document.querySelector(link.getAttribute('href'));
+      const targetSection = document.querySelector(link.getAttribute("href"));
       if (targetSection) {
-        targetSection.scrollIntoView({ behavior: 'smooth' });
+        targetSection.scrollIntoView({ behavior: "smooth" });
       }
     });
   });
 
-  // === CONFETTI BUTTON LOGIC ===
-  const confettiButton = document.getElementById('confettiButton');
+  // Confetti redirect logic
+  const confettiButton = document.getElementById("confettiButton");
   if (confettiButton) {
-    confettiButton.addEventListener('click', (e) => {
+    confettiButton.addEventListener("click", (e) => {
       e.preventDefault();
-
       const duration = 1000;
       const animationEnd = Date.now() + duration;
       const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1000 };
-
       const interval = setInterval(() => {
         const timeLeft = animationEnd - Date.now();
         if (timeLeft <= 0) {
@@ -66,39 +59,29 @@ document.addEventListener("DOMContentLoaded", () => {
         const particleCount = 50 * (timeLeft / duration);
         confetti(Object.assign({}, defaults, {
           particleCount,
-          origin: { x: Math.random(), y: Math.random() - 0.2 }
+          origin: { x: Math.random(), y: Math.random() - 0.2 },
         }));
       }, 250);
     });
   }
 
-  // === PARTICLES.JS INIT ===
-  if (document.getElementById('particles-js')) {
-    particlesJS('particles-js', {
+  // Particles.js initialization
+  if (document.getElementById("particles-js")) {
+    particlesJS("particles-js", {
       particles: {
-        number: {
-          value: 80,
-          density: {
-            enable: true,
-            value_area: 800
-          }
-        },
-        shape: {
-          type: 'circle'
-        },
-        move: {
-          speed: 3
-        }
-      }
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        shape: { type: "circle" },
+        move: { speed: 3 },
+      },
     });
   }
 
-  // === 3D TILT ON CARD HOVER ===
-  document.querySelectorAll('.card').forEach(card => {
+  // 3D tilt effect on card hover
+  document.querySelectorAll(".card").forEach((card) => {
     card.style.transformStyle = "preserve-3d";
     card.style.transition = "transform 0.2s ease";
 
-    card.addEventListener('mousemove', e => {
+    card.addEventListener("mousemove", (e) => {
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
@@ -109,19 +92,19 @@ document.addEventListener("DOMContentLoaded", () => {
       card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     });
 
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "rotateX(0deg) rotateY(0deg)";
     });
   });
 
-  // === OPTIONAL: SCROLLREVEAL (Only if ScrollReveal.js is included) ===
-  if (typeof ScrollReveal !== 'undefined') {
-    ScrollReveal().reveal('.logic-lab-card', {
-      origin: 'bottom',
-      distance: '50px',
+  // Optional: ScrollReveal if available
+  if (typeof ScrollReveal !== "undefined") {
+    ScrollReveal().reveal(".logic-lab-card", {
+      origin: "bottom",
+      distance: "50px",
       duration: 1000,
       delay: 300,
-      reset: false
+      reset: false,
     });
   }
 });
