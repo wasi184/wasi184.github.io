@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Wasi || Portfolio</title>
-  <link rel="stylesheet" href="style.css"> 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
 
+  <!-- 🌌 Background Particles -->
+  <div id="particles-js"></div>
+
+  <!-- 🧭 Navbar -->
   <nav class="navbar">
     <div class="logo">Wasi</div>
     <div class="nav-links">
@@ -22,15 +25,19 @@
     </div>
   </nav>
 
-  <h4 id="typingEffect">&nbsp;Undergrad CSE student</h4>
+  <!-- 👨‍🎓 Typing Title -->
+  <h4 id="typingEffect"></h4>
 
+  <!-- 📦 Main Container -->
   <section class="container">
 
+    <!-- About -->
     <div id="about" class="card about section">
       <h2>About Me</h2>
       <p>Hi, I’m Wasi—dedicated learner on a journey to become a skilled software engineer. I’m currently exploring programming with Java, Python, and SQL while building a strong foundation in Object-Oriented Programming and Machine Learning. My long-term goal is to specialize in Large Language Models and Artificial Intelligence.</p>
     </div>
 
+    <!-- Projects -->
     <div id="projects" class="card project green section">
       <h2>Projects</h2>
       <div class="project-item">
@@ -43,30 +50,30 @@
       </div>
     </div>
 
+    <!-- Resources -->
     <div id="resources" class="card resources section">
       <h2>Educational Resources</h2>
       <p>Explore helpful PDFs for BRAC University admission preparation.</p>
       <a href="resources.html" class="btn btn-glow" id="confettiButton">View Resources</a>
     </div>
 
-    <!-- 💡 NEW BLOG CARD -->
+    <!-- Blog -->
     <div class="card project blog section">
       <h2>Blog</h2>
       <p>Coming soon: dive into my thoughts, code experiments, tips, and rants about life as a CSE student.</p>
-     <!-- <a href="#" class="btn neon-glow">Read More</a>-->
     </div>
 
-    
-     <div class="card logic-lab-card">
-  <div class="card-content">
-    <h3>Logic Lab</h3>
-    <p>A playground of brainy builds, quirky problems, and algorithmic creativity. Tackle real-life logic with clean code and curious thought.</p>
-    <button class="css-button-gradient--4">Jump In</button>
- </div>
-</div>
+    <!-- Logic Lab -->
+    <div class="card logic-lab-card section">
+      <div class="card-content">
+        <h3>Logic Lab</h3>
+        <p>A playground of brainy builds, quirky problems, and algorithmic creativity. Tackle real-life logic with clean code and curious thought.</p>
+        <button class="css-button-gradient--4">Jump In</button>
+      </div>
+    </div>
 
-    
-  <div class="card contact">
+    <!-- Contact -->
+    <div class="card contact section">
       <h2>Contact Me</h2>
       <div class="simple-socials">
         <div class="top-socials">
@@ -83,27 +90,30 @@
       </div>
     </div>
 
-
-    <!--<div class="card logic-lab-card">
-  <div class="card-content">
-    <h3>Logic Lab</h3>
-    <p>A playground of brainy builds, quirky problems, and algorithmic creativity. Tackle real-life logic with clean code and curious thought.</p>
-    <button class="card-button">Jump In</button>
-  </div>
-</div>-->
-
-
   </section>
 
+  <!-- Footer -->
   <footer>
     <div class="container">
       <p>© 2025 VortexRage. All rights reserved.</p>
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="script.js"></script>
+
+  <!-- Optional: Typing Effect -->
+  <script>
+    const typingTarget = document.getElementById("typingEffect");
+    const text = "Undergrad CSE student";
+    let index = 0;
+
+    function type() {
+      typingTarget.textContent = text.slice(0, index++);
+      if (index <= text.length) setTimeout(type, 100);
+    }
+    type();
+  </script>
 
 </body>
 </html>
-
-
