@@ -37,6 +37,29 @@ a {
   z-index: 999;
 }
 
+/* 🌞 Light Mode (default) */ 
+body:not(.dark-mode) .navbar {
+  background-color: #ffffff;
+}
+
+body:not(.dark-mode) .nav-links a,
+body:not(.dark-mode) .logo,
+body:not(.dark-mode) #darkModeToggle {
+  color: #000000;
+}
+
+/* 🌙 Dark Mode */
+body.dark-mode .navbar {
+  background-color: #000000;
+}
+
+body.dark-mode .nav-links a,
+body.dark-mode .logo,
+body.dark-mode #darkModeToggle {
+  color: #ffffff;
+}
+
+
 .navbar .logo {
   font-weight: bold;
   font-size: 1.5rem;
