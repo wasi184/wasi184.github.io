@@ -208,10 +208,12 @@ background: linear-gradient(135deg, #00c6ff, #0072ff); /* vibrant blue */
 footer {
   padding: 2rem;
   text-align: center;
-  background: #111;
+  background: transparent; /* removes the black background */
   font-size: 0.9rem;
   margin-top: 4rem;
+  color: inherit; /* uses current text color based on mode */
 }
+
 
 /* SCROLL REVEAL ANIMATION */
 .section, .card {
@@ -247,3 +249,7 @@ body.dark-mode .btn-glow {
 body.dark-mode .css-button-gradient--4 {
   box-shadow: 0 0 10px #7f00ff;
 }
+body.dark-mode footer {
+  color: #fff;
+}
+
