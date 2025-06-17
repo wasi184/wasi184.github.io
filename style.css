@@ -141,6 +141,34 @@ background: linear-gradient(135deg, #00c6ff, #0072ff); /* vibrant blue */
   /*color: #fff;*/
 }
 
+/* LIGHT MODE GRADIENTS (only for light mode) */
+body:not(.dark-mode) .card.about {
+  background: linear-gradient(135deg, #89f7fe, #66a6ff); /* Soft blue */
+}
+
+body:not(.dark-mode) .card.project {
+  background: linear-gradient(135deg, #fddb92, #d1fdff); /* Light yellow to teal */
+}
+
+body:not(.dark-mode) .card.resources {
+  background: linear-gradient(135deg, #fbc2eb, #a6c1ee); /* Light pink/purple */
+}
+
+body:not(.dark-mode) .card.blog {
+  background: linear-gradient(135deg, #ffecd2, #fcb69f); /* Orange/beige */
+}
+
+body:not(.dark-mode) .card.contact {
+  background: linear-gradient(135deg, #c2ffd8, #465efb); /* Green to blue */
+}
+
+body:not(.dark-mode) .logic-lab-card {
+  background: linear-gradient(135deg, #99f2c8, #1f4037); /* Soft mint to deep green */
+  color: #000;
+  border: 1px solid #1f4037;
+}
+
+
 /* RESPONSIVE HEIGHT FIX FOR LARGE SCREENS */
 @media (min-width: 768px) {
   .card {
