@@ -93,23 +93,23 @@ a {
 
 /* GRADIENT BACKGROUNDS */
 .card.about {
-  background: linear-gradient(135deg, #ffecd2, #fcb69f); /* peach */
+background: linear-gradient(135deg, #00c6ff, #0072ff); /* vibrant blue*/
 }
 
 .card.project {
-  background: linear-gradient(135deg, #a18cd1, #fbc2eb); /* purple-pink */
+  background: linear-gradient(135deg, #00c6ff, #0072ff); /* vibrant blue */
 }
 
 .card.resources {
-  background: linear-gradient(135deg, #f6d365, #fda085); /* gold-orange */
+background: linear-gradient(135deg, #00c6ff, #0072ff); /* vibrant blue */
 }
 
 .card.blog {
-  background: linear-gradient(135deg, #d4fc79, #96e6a1); /* lime green */
+background: linear-gradient(135deg, #00c6ff, #0072ff); /* vibrant blue */
 }
 
 .card.contact {
-  background: linear-gradient(135deg, #84fab0, #8fd3f4); /* teal-blue */
+  background: linear-gradient(135deg, #00c6ff, #0072ff); /* vibrant blue */
 }
 
 .logic-lab-card {
@@ -121,7 +121,7 @@ a {
 /* RESPONSIVE HEIGHT FIX FOR LARGE SCREENS */
 @media (min-width: 768px) {
   .card {
-    max-width: 700px;
+    max-width: 500px;
     margin: 20px auto;
     padding: 20px;
     height: auto;
