@@ -116,7 +116,7 @@ body.dark-mode #darkModeToggle {
 
 /* GRADIENT BACKGROUNDS */
 .card.about {
-  background: linear-gradient(135deg, #2193b0, #6dd5ed); /* ocean blue gradient */
+  background: linear-gradient(135deg, #002f4b, #00c6ff, #a18cd1); /* deep ocean blue + light cyan + soft purple */
 }
 
 .card.project {
@@ -128,11 +128,11 @@ body.dark-mode #darkModeToggle {
 }
 
 .card.blog {
-  background: linear-gradient(135deg, #396afc, #2948ff); /* rich blue burst */
+  background: linear-gradient(135deg, #ff00cc, #33ccff); /* magenta + light blue */
 }
 
 .card.contact {
-  background: linear-gradient(135deg, #3a7bd5, #00d2ff); /* sky blue highlight */
+  background: linear-gradient(135deg, #1e3c72, #2a5298, #9d50bb); /* deep blue + sky blue + purple */
 }
 
 .logic-lab-card {
