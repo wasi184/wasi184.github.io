@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Load dark mode state from localStorage
   if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark-mode");
-    toggleButton.textContent = "☀️";
-  } else {
     toggleButton.textContent = "🌙";
+  } else {
+    toggleButton.textContent = "☀️";
   }
 
   // Toggle dark mode and store preference
