@@ -1,9 +1,9 @@
 public class Teacher {
     // Instance variables
-    private String name;
-    private String subject;
-    private int yearsOfExperience;
-    private double salary;
+    public String name;
+    public String subject;
+    public int yearsOfExperience;
+    public double salary;
     
     // Default constructor
     public Teacher() {
